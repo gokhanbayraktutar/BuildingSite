@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRepository\Base\IService.cs" />
+    <Compile Include="IRepository\IAdminService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingSite.Data\BuildingSite.Data.csproj">
+      <Project>{544bf8c5-9687-4491-86c2-85366b71c10b}</Project>
+      <Name>BuildingSite.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BuildingSite.Model\BuildingSite.Model.csproj">
+      <Project>{e7c27e0f-91dd-4dab-8925-84ae8a034dc3}</Project>
+      <Name>BuildingSite.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
