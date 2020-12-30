@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using BuildingSite.Data.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,12 @@ namespace BuildingSite.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Mapping Initialized
+            Mapper.Initialize(cfg =>
+            {
+                MapUtility.ConfigureMapping(cfg);
+            });
         }
     }
 }
