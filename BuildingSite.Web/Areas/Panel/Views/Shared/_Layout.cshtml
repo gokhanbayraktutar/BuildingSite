@@ -24,9 +24,17 @@
                     @Html.Partial("_MainSidebar")
                     <div class="pcoded-content">
                         @RenderBody()
+                        <div style="margin-top:750px">
+                            <hr />
+                            <footer>
+                                <p>&copy; @DateTime.Now.Year - Tüm Hakları Saklıdır</p>
+                            </footer>
+                        </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 </body>
