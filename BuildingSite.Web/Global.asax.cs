@@ -1,9 +1,11 @@
-﻿using AutoMapper;
+﻿using Autofac;
+using Autofac.Integration.Mvc;
+using AutoMapper;
+using BuildingSite.Contracts.IRepository;
+using BuildingSite.Data.Context;
 using BuildingSite.Data.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using BuildingSite.Services.Repository;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -14,6 +16,19 @@ namespace BuildingSite.Web
     {
         protected void Application_Start()
         {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
+            builder.RegisterType<DataContext>();
+
+            builder.RegisterType<AdminService>().As<IAdminService>();
+
+            IContainer container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
