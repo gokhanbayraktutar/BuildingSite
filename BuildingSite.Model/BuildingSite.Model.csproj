@@ -60,7 +60,7 @@
     <Compile Include="EntityModels\ProjectCategoryModel.cs" />
     <Compile Include="EntityModels\ProjectModel.cs" />
     <Compile Include="EntityModels\ReferenceModel.cs" />
-    <Compile Include="EntityModels\SiteContstantModel.cs" />
+    <Compile Include="EntityModels\SiteConstantModel.cs" />
     <Compile Include="EntityModels\SliderModel.cs" />
     <Compile Include="EntityModels\SubCategoryModel.cs" />
     <Compile Include="EntityModels\ViewModel.cs" />

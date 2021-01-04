@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace BuildingSite.Services.Repository
 {
-    public class SiteContstantService : Service<SiteConstant, SiteContstantModel>, ISiteConstantService
+    public class SiteConstantService : Service<SiteConstant, SiteConstantModel>, ISiteConstantService
     {
         private DataContext _context;
 
-        public SiteContstantService(DataContext context) : base(context)
+        public SiteConstantService(DataContext context) : base(context)
         {
             _context = context;
         }

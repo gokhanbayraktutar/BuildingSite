@@ -4,7 +4,7 @@ using BuildingSite.Model.EntityModels;
 
 namespace BuildingSite.Contracts.IRepository
 {
-    public interface ISiteConstantService :  IService<SiteConstant, SiteContstantModel>
+    public interface ISiteConstantService :  IService<SiteConstant, SiteConstantModel>
     {
 
     }

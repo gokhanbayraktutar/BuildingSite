@@ -2,7 +2,7 @@
 
 namespace BuildingSite.Model.EntityModels
 {
-    public class SiteContstantModel : EntityModel
+    public class SiteConstantModel : EntityModel
     {
         public string Header { get; set; }
 

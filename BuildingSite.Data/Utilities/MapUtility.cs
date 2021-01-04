@@ -27,7 +27,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<SubCategory, SubCategoryModel>();
             config.CreateMap<ContactPage, ContactPageModel>();
             config.CreateMap<Reference, ReferenceModel>();
-            config.CreateMap<SiteConstant, SiteContstantModel>();
+            config.CreateMap<SiteConstant, SiteConstantModel>();
 
             #endregion
 
@@ -43,7 +43,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<SubCategoryModel, SubCategory>();
             config.CreateMap<ContactPageModel, ContactPage>();
             config.CreateMap<ReferenceModel, Reference>();
-            config.CreateMap<SiteContstantModel, SiteConstant>();
+            config.CreateMap<SiteConstantModel, SiteConstant>();
 
             #endregion
         }
