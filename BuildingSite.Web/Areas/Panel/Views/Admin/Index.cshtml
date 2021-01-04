@@ -3,12 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
 }
-
-<div class="pcoded-inner-content">
-
-    <div class="main-body">
-        <div class="page-wrapper">
-
             @*<div class="page-header">
                     <div class="row align-items-end">
                         <div class="col-lg-4">
@@ -28,8 +22,6 @@
                         </div>
                     </div>
                 </div>*@
-
-
             <div class="page-body">
                 <div class="row">
                     <div class="col-sm-12">
@@ -37,6 +29,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h5>Kullanıcı Listesi</h5>
+                            </div>
+                            <div>
+                                <a href="/Panel/Admin/Create" class="btn btn-primary" style="float:right; margin-right:50px">Yeni Ekle</a>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
@@ -55,7 +50,7 @@
                                                     <td>@admin.UserName</td>
                                                     <td>@admin.Email</td>
                                                     <td>
-                                                        <a href="#" class="btn btn-primary">Düzenle</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-danger">Sil</a>
+                                                        <a href="/Panel/Admin/Edit/@admin.Id" class="btn btn-primary">Düzenle</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-danger">Sil</a>
                                                     </td>
                                                 </tr>
                                             }
@@ -74,12 +69,5 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <div id="styleSelector">
-    </div>
-</div>
 
 

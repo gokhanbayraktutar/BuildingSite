@@ -1182,6 +1182,7 @@
     <Content Include="Areas\Panel\Views\Anasayfa\Index.cshtml" />
     <Content Include="Areas\Panel\Views\Shared\_PageHeader.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

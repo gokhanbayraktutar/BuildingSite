@@ -19,9 +19,6 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         {
             _adminService = adminService;
         }
-        
-
-
 
         // GET: Panel/Admin
         public ActionResult Index()
@@ -31,10 +28,34 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             return View(model);
         }
 
-        public ActionResult Edit()
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
+            model.AdminModels = _adminService.GetAll().Where(x => x.Id == id).ToList();
+
+            return View(model);
 
         }
 
+        [HttpPost]
+        public ActionResult Edit(AdminModel adminModel)
+        {
+            _adminService.Update(adminModel);
+
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(AdminModel adminModel)
+        {
+            _adminService.Add(adminModel);
+
+            return RedirectToAction("Index");
+        }
     }
 }

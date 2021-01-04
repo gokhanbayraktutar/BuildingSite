@@ -59,19 +59,25 @@
                 <div class="pcoded-wrapper">
                     @Html.Partial("_MainSidebar")
                     <div class="pcoded-content">
-                        @RenderBody()
-                        <div>
-                            <hr />
-                            <div class="footer bg-inverse" style="background-color:white !important">
-                                <p class="text-center" style="color:black"> @DateTime.Now.Year - Tüm Hakları Saklıdır</p>
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    @RenderBody()
+                                </div>
                             </div>
                         </div>
+                                    <div>
+                                        <hr />
+                                        <div class="footer bg-inverse" style="background-color:white !important">
+                                            <p class="text-center" style="color:black"> @DateTime.Now.Year - Tüm Hakları Saklıdır</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
-
-            </div>
-
-        </div>
     </div>
 </body>
 </html>
