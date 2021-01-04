@@ -30,7 +30,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
                 FormsAuthentication.SetAuthCookie(cookie, true);
                 Session["FullName"] = user.UserName;
                 Session["ID"] = user.Id;
-                return Redirect("/Panel/Default/Index");
+                return Redirect("/Panel/Anasayfa/Index");
             }
             else
             {

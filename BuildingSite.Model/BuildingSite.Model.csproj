@@ -63,6 +63,7 @@
     <Compile Include="EntityModels\SiteContstantModel.cs" />
     <Compile Include="EntityModels\SliderModel.cs" />
     <Compile Include="EntityModels\SubCategoryModel.cs" />
+    <Compile Include="EntityModels\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
