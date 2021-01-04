@@ -23,6 +23,7 @@ namespace BuildingSite.Web
             builder.RegisterType<DataContext>();
 
             builder.RegisterType<AdminService>().As<IAdminService>();
+            builder.RegisterType<SiteContstantService>().As<ISiteConstantService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

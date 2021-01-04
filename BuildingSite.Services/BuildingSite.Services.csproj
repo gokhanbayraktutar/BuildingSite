@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AdminService.cs" />
     <Compile Include="Repository\Base\Service.cs" />
+    <Compile Include="Repository\SiteContstantService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuildingSite.Contracts\BuildingSite.Contracts.csproj">
