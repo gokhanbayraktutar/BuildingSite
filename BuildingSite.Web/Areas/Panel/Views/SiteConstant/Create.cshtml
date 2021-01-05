@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="margin-top:100px">
+    <div class="card-header">
+        <h5>Site Sabitleri Bilgileri Ekleme</h5>
+        <hr />
+        <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
+    </div>
+
+
+    <div class="card-block">
+        <form enctype="multipart/form-data" method="post" role="form">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Başlık</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Header" class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Logo</label>
+                <div class="col-sm-5">
+                    <input type="file" name="ImageFile"  class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">İçerik</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Content"  class="form-control form-control-normal">
+                </div>
+            </div>
+
+            <div class="card-block">
+                <div class="col-lg-7" style="float:right">
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                    <button class="btn btn-danger">İptal et</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

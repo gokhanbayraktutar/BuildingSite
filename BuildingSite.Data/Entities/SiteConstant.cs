@@ -1,6 +1,6 @@
 ﻿using BuildingSite.Data.Entities.Base;
 
-namespace BuildingSite.Data
+namespace BuildingSite.Data.Entities
 {
     public class SiteConstant : Entity
     {
@@ -9,5 +9,6 @@ namespace BuildingSite.Data
         public string Logo { get; set; }
 
         public string Content { get; set; }
+
     }
 }

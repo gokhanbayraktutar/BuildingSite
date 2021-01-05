@@ -10,14 +10,22 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
     {
         private readonly IAdminService _adminService;
 
-        public AccountController(IAdminService adminService)
+        private readonly ISiteConstantService _siteConstantService;
+
+
+
+        public AccountController(IAdminService adminService, ISiteConstantService siteConstantService)
         {
             _adminService = adminService;
+
+            _siteConstantService = siteConstantService;
         }
 
         public ActionResult Login()
         {
-            return View();
+            ViewModel model = new ViewModel();
+            model.SiteConstantModel = _siteConstantService.GetById(6);
+            return View(model);
         }
 
         [HttpPost]

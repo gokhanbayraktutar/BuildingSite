@@ -6,7 +6,9 @@ namespace BuildingSite.Model.EntityModels
     {
        public List<AdminModel> AdminModels { get; set; }
 
-        public AdminModel AdminModel { get; set; }
+       public SiteConstantModel SiteConstantModel { get; set; }
+
+       public AdminModel AdminModel { get; set; }
 
     }
 }

@@ -1,13 +1,19 @@
-﻿
-<nav class="navbar header-navbar pcoded-header">
+﻿<nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
             @*<a class="mobile-menu" id="mobile-collapse" href="#!">
                     <i class="feather icon-menu"></i>
                 </a>*@
-            <a href="index.html">
-                <img src="~/Areas/Panel/Content/assets/images/logo.png" alt="Theme-Logo" />
-            </a>
+            <div class="row">
+                <div class="col-sm-5">
+                    <a href="index.html">
+                        <img src="~/Upload/Image/@{ Html.RenderAction("Logo", "SiteConstant"); }" width="40" style="border-radius: 50%;" alt="Theme-Logo" />
+                    </a>
+                </div>
+                <div class="col-sm-7" style="color: #fff;font-weight: bold;font-size: 25px;text-transform: uppercase;">
+                    @{ Html.RenderAction("LogoName", "SiteConstant"); }
+                </div>
+            </div>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>
             </a>
@@ -25,7 +31,6 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="~/Areas/Panel/Content/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                             <span> @Session["FullName"]</span>
                             <i class="feather icon-chevron-down"></i>
                         </div>

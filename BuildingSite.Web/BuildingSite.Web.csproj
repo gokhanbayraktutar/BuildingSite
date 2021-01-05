@@ -165,6 +165,7 @@
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
     <Compile Include="Areas\Panel\Controllers\AnasayfaController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Panel\Controllers\SiteConstantController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1140,8 +1141,12 @@
     <Content Include="Areas\Panel\Content\bower_components\bootstrap\js\bootstrap.min.js" />
     <Content Include="Areas\Panel\Content\bower_components\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
     <Content Include="Areas\Panel\Content\bower_components\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\Panel\Content\bower_components\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="Areas\Panel\Content\bower_components\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="Areas\Panel\Content\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js" />
     <Content Include="Areas\Panel\Content\bower_components\datatables.net-responsive-bs4\css\responsive.bootstrap4.min.css" />
     <Content Include="Areas\Panel\Content\bower_components\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js" />
+    <Content Include="Areas\Panel\Content\bower_components\datatables.net\js\jquery.dataTables.min.js" />
     <Content Include="Areas\Panel\Content\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js" />
     <Content Include="Areas\Panel\Content\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js" />
     <Content Include="Areas\Panel\Content\bower_components\i18next\js\i18next.min.js" />
@@ -1183,6 +1188,8 @@
     <Content Include="Areas\Panel\Views\Shared\_PageHeader.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\SiteConstant\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\SiteConstant\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1213,7 +1220,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Panel\Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Upload\" />
+    <Folder Include="Upload\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1245,6 +1252,9 @@
       <Project>{12f38b03-557f-452f-aaf0-deceaf06ac0f}</Project>
       <Name>BuildingSite.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
