@@ -161,6 +161,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Panel\Controllers\AboutUsPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\AccountController.cs" />
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
     <Compile Include="Areas\Panel\Controllers\AnasayfaController.cs" />
@@ -1195,6 +1196,7 @@
     <Content Include="Areas\Panel\Views\Reference\Index.cshtml" />
     <Content Include="Areas\Panel\Views\Reference\Create.cshtml" />
     <Content Include="Areas\Panel\Views\Reference\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\AboutUsPage\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

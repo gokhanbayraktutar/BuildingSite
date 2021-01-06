@@ -25,6 +25,8 @@ namespace BuildingSite.Web
             builder.RegisterType<AdminService>().As<IAdminService>();
             builder.RegisterType<SiteConstantService>().As<ISiteConstantService>();
             builder.RegisterType<ReferencesService>().As<IReferencesService>();
+            builder.RegisterType<AboutUsPageService>().As<IAboutUsPageService>();
+            builder.RegisterType<ContactPageService>().As<IContactPageService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
