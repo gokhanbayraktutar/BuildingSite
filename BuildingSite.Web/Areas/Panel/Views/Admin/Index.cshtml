@@ -1,4 +1,4 @@
-﻿@model BuildingSite.Model.EntityModels.ViewModel
+﻿@model List<BuildingSite.Model.EntityModels.AdminModel> 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
@@ -44,7 +44,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var admin in Model.AdminModels)
+                                            @foreach (var admin in Model)
                                             {
                                                 <tr>
                                                     <td>@admin.UserName</td>
