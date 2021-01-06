@@ -165,6 +165,7 @@
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
     <Compile Include="Areas\Panel\Controllers\AnasayfaController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Panel\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Panel\Controllers\SiteConstantController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -378,6 +379,7 @@
     <Content Include="Areas\Panel\Content\assets\js\script.js" />
     <Content Include="Areas\Panel\Content\assets\js\script.min.js" />
     <Content Include="Areas\Panel\Content\assets\js\SmoothScroll.js" />
+    <Content Include="Areas\Panel\Content\assets\js\sweetalert.min.js" />
     <Content Include="Areas\Panel\Content\assets\js\swiper-custom.js" />
     <Content Include="Areas\Panel\Content\assets\js\vartical-layout.min.js" />
     <Content Include="Areas\Panel\Content\assets\pages\accordion\accordion.js" />
@@ -1190,6 +1192,9 @@
     <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
     <Content Include="Areas\Panel\Views\SiteConstant\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\SiteConstant\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Reference\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Reference\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Reference\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

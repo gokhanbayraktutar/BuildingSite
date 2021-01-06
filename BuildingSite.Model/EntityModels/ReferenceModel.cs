@@ -1,4 +1,6 @@
 ﻿using BuildingSite.Model.EntityModels.Base;
+using System.Collections.Generic;
+using System.Web;
 
 namespace BuildingSite.Model.EntityModels
 {
@@ -9,5 +11,7 @@ namespace BuildingSite.Model.EntityModels
         public string Picture { get; set; }
 
         public string Link { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }
