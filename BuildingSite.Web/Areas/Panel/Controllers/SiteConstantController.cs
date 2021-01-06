@@ -44,7 +44,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             _siteConstantService.Add(siteConstantModel);
 
-            return RedirectToAction("Edit");
+            return RedirectToAction("/Panel/Anasayfa");
 
         }
 
