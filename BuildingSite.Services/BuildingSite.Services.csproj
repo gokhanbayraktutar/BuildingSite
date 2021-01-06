@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AboutUsPageService.cs" />
     <Compile Include="Repository\AdminService.cs" />
     <Compile Include="Repository\Base\Service.cs" />
     <Compile Include="Repository\ReferencesService.cs" />
