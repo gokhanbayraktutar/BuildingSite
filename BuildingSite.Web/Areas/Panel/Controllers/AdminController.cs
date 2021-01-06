@@ -57,5 +57,20 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int id)
+        {
+            bool result = false;
+
+            AdminModel model = _adminService.GetById(id);
+
+            if (model != null)
+            {
+                _adminService.Remove(model.Id);
+
+                result = true;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }
