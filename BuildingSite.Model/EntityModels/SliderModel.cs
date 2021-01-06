@@ -11,5 +11,7 @@ namespace BuildingSite.Model.EntityModels
         public string Content { get; set; }
 
         public bool Active { get; set; }
+
+        public int Siralama { get; set; }
     }
 }
