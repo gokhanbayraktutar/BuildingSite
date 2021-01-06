@@ -36,7 +36,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
 
-            siteConstantModel.Logo = "~/Upload/Image/" + fileName;
+            siteConstantModel.Logo = fileName;
 
             fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
@@ -74,7 +74,6 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             _siteConstantService.Update(siteConstantModel);
 
-            ViewBag.Message = "Kaydedildi";
 
             return RedirectToAction("Edit");
         }
