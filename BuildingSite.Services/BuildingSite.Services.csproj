@@ -64,6 +64,7 @@
     <Compile Include="Repository\ContactPageService.cs" />
     <Compile Include="Repository\ReferencesService.cs" />
     <Compile Include="Repository\SiteConstantService.cs" />
+    <Compile Include="Repository\SliderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuildingSite.Contracts\BuildingSite.Contracts.csproj">

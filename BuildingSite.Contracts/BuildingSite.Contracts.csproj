@@ -47,6 +47,7 @@
     <Compile Include="IRepository\IContactPageService.cs" />
     <Compile Include="IRepository\IReferencesService.cs" />
     <Compile Include="IRepository\ISiteConstantService.cs" />
+    <Compile Include="IRepository\ISliderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

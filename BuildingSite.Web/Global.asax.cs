@@ -27,6 +27,7 @@ namespace BuildingSite.Web
             builder.RegisterType<ReferencesService>().As<IReferencesService>();
             builder.RegisterType<AboutUsPageService>().As<IAboutUsPageService>();
             builder.RegisterType<ContactPageService>().As<IContactPageService>();
+            builder.RegisterType<SliderService>().As<ISliderService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
