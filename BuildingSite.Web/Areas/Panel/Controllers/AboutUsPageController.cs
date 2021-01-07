@@ -2,6 +2,7 @@
 using BuildingSite.Model.EntityModels;
 using System;
 using System.IO;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
@@ -33,21 +34,31 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         [HttpPost]
         public ActionResult Edit(AboutUsPageModel aboutUsPageModel)
         {
-            string fileName = Path.GetFileNameWithoutExtension(aboutUsPageModel.ImageFile.FileName);
+            if (aboutUsPageModel.ImageFile != null)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(aboutUsPageModel.ImageFile.FileName);
 
-            string extension = Path.GetExtension(aboutUsPageModel.ImageFile.FileName);
+                string extension = Path.GetExtension(aboutUsPageModel.ImageFile.FileName);
 
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
 
-            aboutUsPageModel.Picture = fileName;
+                aboutUsPageModel.Picture = fileName;
 
-            fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
+                fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
-            aboutUsPageModel.ImageFile.SaveAs(fileName);
+                aboutUsPageModel.ImageFile.SaveAs(fileName);
 
-            _aboutUsPageService.Update(aboutUsPageModel);
+                _aboutUsPageService.Update(aboutUsPageModel);
+            }
+            else
+            {
+                var aboutUsPage = _aboutUsPageService.GetAll().FirstOrDefault(x => x.Id == aboutUsPageModel.Id);
 
+                aboutUsPageModel.Picture = aboutUsPage.Picture;
 
+                _aboutUsPageService.Update(aboutUsPageModel);
+
+            }
             return RedirectToAction("Edit");
         }
 
