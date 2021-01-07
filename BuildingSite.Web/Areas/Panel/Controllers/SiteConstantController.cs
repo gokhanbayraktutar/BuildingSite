@@ -99,7 +99,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             return Content(model.Logo);
         }
 
-        public ActionResult LogoName()
+        public ActionResult Header()
         {
             var  model = _siteConstantService.GetById(6);
 
