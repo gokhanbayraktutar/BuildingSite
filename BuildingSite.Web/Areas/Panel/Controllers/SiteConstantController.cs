@@ -60,19 +60,33 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         [HttpPost]
         public ActionResult Edit(SiteConstantModel siteConstantModel)
         {
-            string fileName = Path.GetFileNameWithoutExtension(siteConstantModel.ImageFile.FileName);
+            if (siteConstantModel.ImageFile != null)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(siteConstantModel.ImageFile.FileName);
 
-            string extension = Path.GetExtension(siteConstantModel.ImageFile.FileName);
+                string extension = Path.GetExtension(siteConstantModel.ImageFile.FileName);
 
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
 
-            siteConstantModel.Logo = fileName;
+                siteConstantModel.Logo = fileName;
 
-            fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
+                fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
-            siteConstantModel.ImageFile.SaveAs(fileName);
+                siteConstantModel.ImageFile.SaveAs(fileName);
 
-            _siteConstantService.Update(siteConstantModel);
+                _siteConstantService.Update(siteConstantModel);
+            }
+
+            else
+            {
+                var siteConstant = _siteConstantService.GetAll().FirstOrDefault(x => x.Id == siteConstantModel.Id);
+
+                siteConstantModel.Logo = siteConstant.Logo;
+
+                _siteConstantService.Update(siteConstantModel);
+
+                return RedirectToAction("Index");
+            }
 
 
             return RedirectToAction("Edit");

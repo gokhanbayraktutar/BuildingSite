@@ -65,19 +65,32 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         [HttpPost]
         public ActionResult Edit(ReferenceModel referenceModel)
         {
-            string fileName = Path.GetFileNameWithoutExtension(referenceModel.ImageFile.FileName);
+            if (referenceModel.ImageFile != null)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(referenceModel.ImageFile.FileName);
 
-            string extension = Path.GetExtension(referenceModel.ImageFile.FileName);
+                string extension = Path.GetExtension(referenceModel.ImageFile.FileName);
 
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
 
-            referenceModel.Picture = fileName;
+                referenceModel.Picture = fileName;
 
-            fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
+                fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
-            referenceModel.ImageFile.SaveAs(fileName);
+                referenceModel.ImageFile.SaveAs(fileName);
 
-            _referencesService.Update(referenceModel);
+                _referencesService.Update(referenceModel);
+
+            }
+            else
+            {
+                var reference = _referencesService.GetAll().FirstOrDefault(x => x.Id == referenceModel.Id);
+
+                referenceModel.Picture = reference.Picture;
+
+                _referencesService.Update(referenceModel);
+
+            }
 
             return RedirectToAction("Index");
 
