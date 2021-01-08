@@ -1,13 +1,12 @@
-﻿@model BuildingSite.Model.EntityModels.SliderModel
+﻿@model BuildingSite.Model.EntityModels.ProjectCategoryModel
 @{
-
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
 }
 
 <div class="card" style="margin-top:10px">
     <div class="card-header">
-        <h5>Slayt Bilgileri Düzenleme</h5>
+        <h5>Proje Kategori Bilgileri Düzenleme</h5>
         <hr />
         <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
     </div>
@@ -16,9 +15,9 @@
     <div class="card-block">
         <form enctype="multipart/form-data" method="post" role="form">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Başlık</label>
+                <label class="col-sm-2 col-form-label">Kategori Adı</label>
                 <div class="col-sm-5">
-                    <input type="text" name="Header" value="@Model.Header" required class="form-control form-control-normal">
+                    <input type="text" name="Name" value="@Model.Name" required class="form-control form-control-normal">
                 </div>
             </div>
             <div class="form-group row">
@@ -37,25 +36,15 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">İçerik</label>
-                <div class="col-sm-5">
-                    <input type="text" name="Content" value="@Model.Content" class="form-control form-control-normal">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Sıralama</label>
-                <div class="col-sm-5">
-                    <input type="text" name="Siralama" value="@Model.Siralama" class="form-control form-control-normal">
-                </div>
-            </div>
-            <div class="form-group row">
                 <div class="col-sm-2">Aktiflik</div>
                 <div class="col-sm-10">
                     <div class="form-check">
                         @if (Model.Active)
                         {
                             <input class="form-check-input" type="checkbox" name="Active" value="true" id="gridCheck1" checked>
-                        } else {
+                        }
+                        else
+                        {
                             <input class="form-check-input" type="checkbox" name="Active" value="true" id="gridCheck1">
                         }
                         <label class="form-check-label" for="gridCheck1">
@@ -73,5 +62,4 @@
         </form>
     </div>
 </div>
-
 
