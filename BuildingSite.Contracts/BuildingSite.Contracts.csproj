@@ -45,6 +45,7 @@
     <Compile Include="IRepository\IAboutUsPageService.cs" />
     <Compile Include="IRepository\IAdminService.cs" />
     <Compile Include="IRepository\IContactPageService.cs" />
+    <Compile Include="IRepository\IProjectCategoryService.cs" />
     <Compile Include="IRepository\IReferencesService.cs" />
     <Compile Include="IRepository\ISiteConstantService.cs" />
     <Compile Include="IRepository\ISliderService.cs" />
