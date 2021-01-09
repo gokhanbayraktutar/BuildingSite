@@ -1,4 +1,4 @@
-﻿@model BuildingSite.Model.EntityModels.ProjectCategoryModel
+﻿@model BuildingSite.Model.EntityModels.ProjectModel
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
@@ -15,9 +15,21 @@
     <div class="card-block">
         <form enctype="multipart/form-data" method="post" role="form">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Kategori Adı</label>
+                <label class="col-sm-2 col-form-label">Başlık</label>
                 <div class="col-sm-5">
-                    <input type="text" name="Name" value="@Model.Name" required class="form-control form-control-normal">
+                    <input type="text" name="Header" value="@Model.Header" required class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Açıklama</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Description" value="@Model.Description" required class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">İçerik</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Content" value="@Model.Content" required class="form-control form-control-normal">
                 </div>
             </div>
             <div class="form-group row">
@@ -33,6 +45,17 @@
                     {
                         <img src="~/Upload/Image/@Model.Picture" width="100" />
                     }
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2">Kategori:</label>
+                <div class="col-sm-5">
+                    <select name="ProjectCategoryId" class="form-control">
+                        @foreach (var cat in Model.ProjectCategoryModels)
+                        {
+                            <option value="@cat.Id">@cat.Name</option>
+                        }
+                    </select>
                 </div>
             </div>
             <div class="form-group row">

@@ -168,6 +168,7 @@
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
+    <Compile Include="Areas\Panel\Controllers\ProjectController.cs" />
     <Compile Include="Areas\Panel\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Panel\Controllers\SiteConstantController.cs" />
     <Compile Include="Areas\Panel\Controllers\SliderController.cs" />
@@ -1207,6 +1208,9 @@
     <Content Include="Areas\Panel\Views\ProjectCategory\Index.cshtml" />
     <Content Include="Areas\Panel\Views\ProjectCategory\Create.cshtml" />
     <Content Include="Areas\Panel\Views\ProjectCategory\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Project\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Project\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Project\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

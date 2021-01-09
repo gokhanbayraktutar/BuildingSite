@@ -1,4 +1,6 @@
 ﻿using BuildingSite.Model.EntityModels.Base;
+using System.Collections.Generic;
+using System.Web;
 
 namespace BuildingSite.Model.EntityModels
 {
@@ -17,5 +19,9 @@ namespace BuildingSite.Model.EntityModels
         public int ProjectCategoryId { get; set; }
 
         public virtual ProjectCategoryModel ProjectCategoryModel { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
+
+        public List<ProjectCategoryModel> ProjectCategoryModels { get; set; }
     }
 }
