@@ -30,6 +30,7 @@ namespace BuildingSite.Web
             builder.RegisterType<SliderService>().As<ISliderService>();
             builder.RegisterType<ProjectCategoryService>().As<IProjectCategoryService>();
             builder.RegisterType<ProjectService>().As<IProjectService>();
+            builder.RegisterType<CategoryService>().As<ICategoryService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
