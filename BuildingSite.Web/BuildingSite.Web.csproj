@@ -165,6 +165,7 @@
     <Compile Include="Areas\Panel\Controllers\AccountController.cs" />
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
     <Compile Include="Areas\Panel\Controllers\AnasayfaController.cs" />
+    <Compile Include="Areas\Panel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
@@ -1211,6 +1212,9 @@
     <Content Include="Areas\Panel\Views\Project\Index.cshtml" />
     <Content Include="Areas\Panel\Views\Project\Create.cshtml" />
     <Content Include="Areas\Panel\Views\Project\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
