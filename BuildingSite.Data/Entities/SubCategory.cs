@@ -14,7 +14,5 @@ namespace BuildingSite.Data.Entities
         public int? CategoryID { get; set; }
 
         public virtual Category Category { get; set; }
-
-        public virtual ICollection<OurService> OurServices { get; set; }
     }
 }

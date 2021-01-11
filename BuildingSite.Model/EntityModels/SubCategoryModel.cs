@@ -1,5 +1,6 @@
 ﻿using BuildingSite.Model.EntityModels.Base;
 using System.Collections.Generic;
+using System.Web;
 
 namespace BuildingSite.Model.EntityModels
 {
@@ -15,6 +16,8 @@ namespace BuildingSite.Model.EntityModels
 
         public virtual CategoryModel CategoryModel { get; set; }
 
-        public virtual ICollection<OurServiceModel> OurServiceModels { get; set; }
+        public List<CategoryModel> CategoryModels { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

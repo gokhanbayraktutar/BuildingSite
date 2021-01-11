@@ -19,8 +19,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<Category, CategoryModel>();
             config.CreateMap<Slider, SliderModel>();
             config.CreateMap<AboutUsPage, AboutUsPageModel>();
-            config.CreateMap<OurService, OurServiceModel>()
-                .ForMember(dest => dest.SubCategoryModel, opt => opt.MapFrom(src => src.SubCategory));
+            config.CreateMap<OurService, OurServiceModel>();
             config.CreateMap<ProjectCategory, ProjectCategoryModel>();
             config.CreateMap<Project, ProjectModel>()
                 .ForMember(dest => dest.ProjectCategoryModel, opt => opt.MapFrom(src => src.ProjectCategory));

@@ -1,4 +1,6 @@
 ﻿using BuildingSite.Model.EntityModels.Base;
+using System.Collections.Generic;
+using System.Web;
 
 namespace BuildingSite.Model.EntityModels
 {
@@ -14,8 +16,6 @@ namespace BuildingSite.Model.EntityModels
 
         public bool Active { get; set; }
 
-        public int SubCategoryId { get; set; }
-
-        public virtual SubCategoryModel SubCategoryModel { get; set; }
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

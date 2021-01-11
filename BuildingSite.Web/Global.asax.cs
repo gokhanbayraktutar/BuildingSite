@@ -31,6 +31,8 @@ namespace BuildingSite.Web
             builder.RegisterType<ProjectCategoryService>().As<IProjectCategoryService>();
             builder.RegisterType<ProjectService>().As<IProjectService>();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
+            builder.RegisterType<SubCategoryService>().As<ISubCategoryService>();
+            builder.RegisterType<OurServiceService>().As<IOurServiceService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

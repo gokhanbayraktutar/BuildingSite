@@ -168,11 +168,13 @@
     <Compile Include="Areas\Panel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Panel\Controllers\OurServiceController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectController.cs" />
     <Compile Include="Areas\Panel\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Panel\Controllers\SiteConstantController.cs" />
     <Compile Include="Areas\Panel\Controllers\SliderController.cs" />
+    <Compile Include="Areas\Panel\Controllers\SubCategoryController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1215,6 +1217,12 @@
     <Content Include="Areas\Panel\Views\Category\Create.cshtml" />
     <Content Include="Areas\Panel\Views\Category\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\SubCategory\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\SubCategory\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\SubCategory\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\OurService\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\OurService\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\OurService\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

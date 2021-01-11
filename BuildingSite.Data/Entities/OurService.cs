@@ -14,8 +14,6 @@ namespace BuildingSite.Data.Entities
 
         public bool Active { get; set; }
 
-        public int SubCategoryId { get; set; }
-
-        public virtual SubCategory SubCategory { get; set; }
+        
     }
 }
