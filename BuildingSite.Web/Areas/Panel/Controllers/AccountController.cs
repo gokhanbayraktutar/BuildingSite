@@ -23,7 +23,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
         public ActionResult Login()
         {
-            ViewModel model = new ViewModel();
+            AdminModel model = new AdminModel();
             model.SiteConstantModel = _siteConstantService.GetById(6);
             return View(model);
         }
@@ -43,7 +43,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             else
             {
                 ViewBag.error = "Kullanıcı Adı Veya Şifre Hatalı!";
-                return View(credentials);
+                return View();
             }
         }
 

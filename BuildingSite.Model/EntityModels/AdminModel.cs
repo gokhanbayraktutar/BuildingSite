@@ -9,5 +9,7 @@ namespace BuildingSite.Model.EntityModels
         public string Password { get; set; }
 
         public string Email { get; set; }
+
+        public SiteConstantModel SiteConstantModel { get; set; }
     }
 }
