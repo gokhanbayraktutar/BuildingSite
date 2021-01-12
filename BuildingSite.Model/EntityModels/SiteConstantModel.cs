@@ -7,7 +7,6 @@ namespace BuildingSite.Model.EntityModels
     {
         public string Header { get; set; }
 
-        
         public string Logo { get; set; }
 
         public string Content { get; set; }

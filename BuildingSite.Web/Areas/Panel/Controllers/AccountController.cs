@@ -43,7 +43,9 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             else
             {
                 ViewBag.error = "Kullanıcı Adı Veya Şifre Hatalı!";
-                return View();
+                AdminModel model = new AdminModel();
+                model.SiteConstantModel = _siteConstantService.GetById(6);
+                return View(model);
             }
         }
 
