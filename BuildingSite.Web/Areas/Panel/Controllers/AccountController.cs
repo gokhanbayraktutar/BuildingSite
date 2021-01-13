@@ -21,6 +21,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             _siteConstantService = siteConstantService;
         }
 
+        [AllowAnonymous]
         public ActionResult Login()
         {
             AdminModel model = new AdminModel();
@@ -28,6 +29,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(AdminModel credentials)
         {
