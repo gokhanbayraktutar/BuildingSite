@@ -13,6 +13,10 @@ namespace BuildingSite.Model.EntityModels
 
         public string Picture { get; set; }
 
+        public string Mail { get; set; }
+
+        public string Phone { get; set; }
+
         public HttpPostedFileBase ImageFile { get; set; }
     }
 }

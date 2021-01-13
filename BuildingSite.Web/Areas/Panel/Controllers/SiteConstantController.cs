@@ -85,7 +85,6 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
                 _siteConstantService.Update(siteConstantModel);
 
-                return RedirectToAction("Index");
             }
 
 

@@ -11,6 +11,8 @@ namespace BuildingSite.Model.EntityModels
 
         public string Content { get; set; }
 
+        public string WorkTime { get; set; }
+
         public HttpPostedFileBase ImageFile { get; set; }  
     }
 }

@@ -10,5 +10,7 @@ namespace BuildingSite.Data.Entities
 
         public string Content { get; set; }
 
+        public string WorkTime { get; set; }
+
     }
 }
