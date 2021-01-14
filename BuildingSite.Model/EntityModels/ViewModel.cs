@@ -10,5 +10,8 @@ namespace BuildingSite.Model.EntityModels
 
        public AdminModel AdminModel { get; set; }
 
+       public List<OurServiceModel> ourServiceModels { get; set; }
+
+        public List<SliderModel> sliderModels { get; set; }
     }
 }

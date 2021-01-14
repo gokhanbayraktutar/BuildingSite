@@ -1,0 +1,97 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+ <!--====================  header area ====================-->
+<div class="header-area header-sticky bg-img space__inner--y40 background-repeat--x background-color--dark d-none d-lg-block" data-bg="/Content/assets/img/icons/ruler.png">
+    <!-- header top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="header-top-info">
+                        <span class="header-top-info__image pr-1"><img src="~/Content/assets/img/icons/phone.png" alt=""></span>
+                        <span class="header-top-info__text">@{ Html.RenderAction("Phone", "Home"); }</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="header-top-info text-center">
+                        <span class="header-top-info__image pr-1"><img src="~/Content/assets/img/icons/clock.png" alt=""></span>
+                        <span class="header-top-info__text">@{ Html.RenderAction("WorkTime", "Home"); }</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- menu bar -->
+    <div class="menu-bar position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="menu-bar-wrapper background-color--default space__inner--x35">
+                        <div class="menu-bar-wrapper-inner">
+                            <div class="row align-items-center">
+                                <div class="col-lg-2">
+                                    <div class="brand-logo">
+                                        <a href="index.html">
+                                            @*<img src="~/Content/assets/img/logo.png" class="img-fluid" alt="">*@
+                                            <img src="~/Upload/Image/@{ Html.RenderAction("Logo", "Home"); }" width="100" alt="Theme-Logo" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="navigation-area d-flex justify-content-end align-items-center">
+                                        <!-- navigation menu -->
+                                        <nav class="main-nav-menu">
+                                            <ul class="d-flex justify-content-end">
+                                                <li><a href="/Home/Index">Anasayfa</a></li>
+                                                <li><a href="about.html">Hakkımızda</a></li>
+                                                <li class="has-sub-menu">
+                                                    <a href="index.html">Hizmetlerimiz</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="index.html">Home One</a></li>
+                                                        <li><a href="index-2.html">Home Two</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has-sub-menu">
+                                                    <a href="service.html">Projelerimiz</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="has-sub-menu">
+                                                            <a href="#">Submenu Level One</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="#">Submenu Level Two</a></li>
+                                                                <li><a href="#">Submenu Level Two</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-sub-menu">
+                                                            <a href="#">Submenu Level One</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="#">Submenu Level Two</a></li>
+                                                                <li><a href="#">Submenu Level Two</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="about.html">Referanslar</a></li>
+                                                <li><a href="about.html">Bize Ulaşın</a></li>
+
+                                            </ul>
+                                        </nav>
+                                        <!-- search icon nav menu -->
+                                        @*<div class="nav-search-icon">
+                                                <button class="header-search-toggle"><i class="fa fa-search"></i></button>
+                                                <div class="header-search-form">
+                                                    <form action="#">
+                                                        <input type="text" placeholder="Type and hit enter">
+                                                        <button><i class="fa fa-search"></i></button>
+                                                    </form>
+                                                </div>
+                                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of header area  ====================-->

@@ -1,31 +1,33 @@
-﻿@{
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!--====================  hero slider area ====================-->
+<div class="hero-slider-area space__bottom--r120">
+    
+    <div class="hero-slick-slider-wrapper">
+        @foreach (var slider in Model.sliderModels)
+        {
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+            <div class="single-hero-slider single-hero-slider--background single-hero-slider--overlay position-relative bg-img" data-bg="/Upload/Image/@slider.Picture">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- hero slider content -->
+                            <div class="hero-slider-content hero-slider-content--extra-space">
+                                <h3 class="hero-slider-content__subtitle">@slider.Header</h3>
+                                <h2 class="hero-slider-content__title space__bottom--50">
+                                   @slider.Content
+                                </h2>
+                                <a href="contact.html" class="default-btn default-btn--hero-slider">Bize Ulaşın</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+   
 </div>
+<!--====================  End of hero slider area  ====================-->

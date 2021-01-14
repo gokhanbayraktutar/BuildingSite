@@ -37,7 +37,7 @@ namespace BuildingSite.Web
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 
-            GlobalFilters.Filters.Add(new AuthorizeAttribute());
+            //GlobalFilters.Filters.Add(new AuthorizeAttribute());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
