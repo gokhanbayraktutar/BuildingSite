@@ -18,7 +18,13 @@ namespace BuildingSite.Web.Controllers
 
         private readonly ISliderService _sliderService;
 
-        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService)
+        private readonly IProjectCategoryService _projectCategoryService;
+
+        private readonly IProjectService _projectService;
+
+
+
+        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService, IProjectCategoryService projectCategoryService, IProjectService projectService)
         {
             _siteConstantService = siteConstantService;
 
@@ -26,14 +32,26 @@ namespace BuildingSite.Web.Controllers
 
             _ourServiceService = ourServiceService;
 
-            _sliderService = sliderService; 
+            _sliderService = sliderService;
+
+            _projectCategoryService = projectCategoryService;
+
+            _projectService = projectService;
+
+           
         }
 
         public ActionResult Index()
         {
             ViewModel model = new ViewModel();
 
-            model.sliderModels = _sliderService.GetAll().ToList();
+            model.sliderModels = _sliderService.GetAll().Where(x=>x.Active == true).ToList();
+
+            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             return View(model);
         }
@@ -82,18 +100,15 @@ namespace BuildingSite.Web.Controllers
             return View();
         }
 
-        //public ActionResult OurService()
-        //{
-        //    ViewModel model = new ViewModel();
-
-        //    model.ourServiceModels =_ourServiceService.GetAll().ToList();
-
-        //    return Content(model);
-        //}
-
-        private ActionResult Content(ViewModel model)
+        public ActionResult OurService()
         {
-            throw new NotImplementedException();
+            ViewModel model = new ViewModel();
+
+            model.ourServiceModels = _ourServiceService.GetAll().ToList();
+
+            return View("_Header",model);
         }
+
+
     }
 }

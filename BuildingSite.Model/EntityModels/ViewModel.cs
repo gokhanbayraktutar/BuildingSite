@@ -12,6 +12,10 @@ namespace BuildingSite.Model.EntityModels
 
        public List<OurServiceModel> ourServiceModels { get; set; }
 
-        public List<SliderModel> sliderModels { get; set; }
+       public List<SliderModel> sliderModels { get; set; }
+
+       public List<ProjectCategoryModel> ProjectCategoryModels { get; set; }
+
+       public List<ProjectModel> ProjectModels { get; set; }
     }
 }

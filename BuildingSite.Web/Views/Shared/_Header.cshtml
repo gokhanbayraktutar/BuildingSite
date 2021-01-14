@@ -1,4 +1,5 @@
 ﻿@model BuildingSite.Model.EntityModels.ViewModel
+ 
  <!--====================  header area ====================-->
 <div class="header-area header-sticky bg-img space__inner--y40 background-repeat--x background-color--dark d-none d-lg-block" data-bg="/Content/assets/img/icons/ruler.png">
     <!-- header top -->
@@ -46,27 +47,28 @@
                                                 <li class="has-sub-menu">
                                                     <a href="index.html">Hizmetlerimiz</a>
                                                     <ul class="sub-menu">
-                                                        <li><a href="index.html">Home One</a></li>
-                                                        <li><a href="index-2.html">Home Two</a></li>
+                                                        @foreach (var item in Model.ourServiceModels)
+                                                        {
+                                                            <li><a href="index.html">@item.Header</a></li>
+                                                        }
                                                     </ul>
                                                 </li>
                                                 <li class="has-sub-menu">
                                                     <a href="service.html">Projelerimiz</a>
                                                     <ul class="sub-menu">
-                                                        <li class="has-sub-menu">
-                                                            <a href="#">Submenu Level One</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="#">Submenu Level Two</a></li>
-                                                                <li><a href="#">Submenu Level Two</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="has-sub-menu">
-                                                            <a href="#">Submenu Level One</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="#">Submenu Level Two</a></li>
-                                                                <li><a href="#">Submenu Level Two</a></li>
-                                                            </ul>
-                                                        </li>
+                                                        @foreach (var item in Model.ProjectCategoryModels)
+                                                        {
+                                                            <li class="has-sub-menu">
+                                                                <a href="#">@item.Name</a>
+                                                                <ul class="sub-menu">
+                                                                    @foreach (var project in Model.ProjectModels.Where(x=>x.ProjectCategoryId == item.Id).Where(x=>x.Active).ToList())
+                                                                    {
+                                                                        <li><a href="#">@project.Header</a></li>
+                                                                    } 
+                                                                </ul>
+                                                            </li>
+                                                        }
+
                                                     </ul>
                                                 </li>
                                                 <li><a href="about.html">Referanslar</a></li>
