@@ -63,6 +63,7 @@
     <Compile Include="Repository\Base\Service.cs" />
     <Compile Include="Repository\CategoryService.cs" />
     <Compile Include="Repository\ContactPageService.cs" />
+    <Compile Include="Repository\NewsService.cs" />
     <Compile Include="Repository\OurServiceService.cs" />
     <Compile Include="Repository\ProjectCategoryService.cs" />
     <Compile Include="Repository\ProjectService.cs" />
