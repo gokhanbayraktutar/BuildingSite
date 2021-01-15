@@ -14,7 +14,7 @@ namespace BuildingSite.Model.EntityModels
 
         public string Picture { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         public HttpPostedFileBase ImageFile { get; set; }
     }

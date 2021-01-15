@@ -14,7 +14,7 @@ namespace BuildingSite.Data.Entities
 
         public string Picture { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
     }
 }
