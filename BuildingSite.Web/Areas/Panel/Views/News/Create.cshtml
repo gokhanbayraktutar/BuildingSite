@@ -1,0 +1,50 @@
+﻿@model BuildingSite.Model.EntityModels.ProjectModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="margin-top:10px">
+    <div class="card-header">
+        <h5>Proje Bilgileri Ekleme</h5>
+        <hr />
+        <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
+    </div>
+
+
+    <div class="card-block">
+        <form enctype="multipart/form-data" method="post" role="form">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Başlık</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Header" required class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Açıklama</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Description" required class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">İçerik</label>
+                <div class="col-sm-5">
+                    <input type="text" name="Content" required class="form-control form-control-normal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Resim</label>
+                <div class="col-sm-5">
+                    <input type="file" name="ImageFile" required class="form-control">
+                </div>
+            </div> 
+            <div class="card-block">
+                <div class="col-lg-7" style="float:right">
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                    <button class="btn btn-danger">İptal et</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
