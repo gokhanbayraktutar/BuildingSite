@@ -168,6 +168,7 @@
     <Compile Include="Areas\Panel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Panel\Controllers\NewsController.cs" />
     <Compile Include="Areas\Panel\Controllers\OurServiceController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectController.cs" />
@@ -1355,6 +1356,9 @@
     <Content Include="Content\assets\fonts\lgd641.eot" />
     <Content Include="Content\assets\fonts\lgd641.ttf" />
     <Content Include="Content\assets\fonts\lgd641.woff" />
+    <Content Include="Areas\Panel\Views\News\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\News\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1382,6 +1386,8 @@
     <Content Include="Views\Shared\_StylesPartial.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,9 +22,11 @@ namespace BuildingSite.Web.Controllers
 
         private readonly IProjectService _projectService;
 
+        private readonly IReferencesService _referencesService;
+        
+        private readonly INewsService _newsService;
 
-
-        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService, IProjectCategoryService projectCategoryService, IProjectService projectService)
+        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService, IProjectCategoryService projectCategoryService, IProjectService projectService, IReferencesService referencesService, INewsService newsService)
         {
             _siteConstantService = siteConstantService;
 
@@ -38,7 +40,10 @@ namespace BuildingSite.Web.Controllers
 
             _projectService = projectService;
 
-           
+            _referencesService = referencesService;
+
+            _newsService = newsService;
+
         }
 
         public ActionResult Index()
@@ -52,6 +57,14 @@ namespace BuildingSite.Web.Controllers
             model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ReferenceModels = _referencesService.GetAll().ToList();
+
+            model.SiteConstantModel = _siteConstantService.GetById(6);
+
+            model.AboutUsPageModel = _aboutUsPageService.GetById(1);
+
+            model.newsModels = _newsService.GetAll().OrderBy(x=>x.Date).Take(3).ToList();
 
             return View(model);
         }

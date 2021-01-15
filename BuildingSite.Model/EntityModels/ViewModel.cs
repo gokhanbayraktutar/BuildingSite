@@ -20,7 +20,8 @@ namespace BuildingSite.Model.EntityModels
 
        public List<ReferenceModel> ReferenceModels { get; set; }
 
+       public AboutUsPageModel AboutUsPageModel { get; set; }
 
-        public AboutUsPageModel AboutUsPageModel { get; set; }
+        public List<NewsModel> newsModels { get; set; }
     }
 }
