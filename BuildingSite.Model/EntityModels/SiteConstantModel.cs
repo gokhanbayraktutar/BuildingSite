@@ -13,6 +13,14 @@ namespace BuildingSite.Model.EntityModels
 
         public string WorkTime { get; set; }
 
-        public HttpPostedFileBase ImageFile { get; set; }  
+        public HttpPostedFileBase ImageFile { get; set; }
+
+        public string YearsOfExperience { get; set; }
+
+        public string ClientsCount { get; set; }
+
+        public string AwardsCount { get; set; }
+
+        public string ProjectCount { get; set; }
     }
 }

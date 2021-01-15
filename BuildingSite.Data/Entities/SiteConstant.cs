@@ -12,5 +12,13 @@ namespace BuildingSite.Data.Entities
 
         public string WorkTime { get; set; }
 
+        public string YearsOfExperience { get; set; }
+
+        public string ClientsCount { get; set; }
+
+        public string AwardsCount { get; set; }
+
+        public string ProjectCount { get; set; }
+
     }
 }

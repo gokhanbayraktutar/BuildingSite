@@ -17,5 +17,10 @@ namespace BuildingSite.Model.EntityModels
        public List<ProjectCategoryModel> ProjectCategoryModels { get; set; }
 
        public List<ProjectModel> ProjectModels { get; set; }
+
+       public List<ReferenceModel> ReferenceModels { get; set; }
+
+
+        public AboutUsPageModel AboutUsPageModel { get; set; }
     }
 }
