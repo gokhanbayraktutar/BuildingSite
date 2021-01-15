@@ -33,6 +33,7 @@ namespace BuildingSite.Web
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<SubCategoryService>().As<ISubCategoryService>();
             builder.RegisterType<OurServiceService>().As<IOurServiceService>();
+            builder.RegisterType<NewsService>().As<INewsService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

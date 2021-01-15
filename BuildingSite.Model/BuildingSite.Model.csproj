@@ -65,6 +65,7 @@
     <Compile Include="EntityModels\SliderModel.cs" />
     <Compile Include="EntityModels\SubCategoryModel.cs" />
     <Compile Include="EntityModels\ViewModel.cs" />
+    <Compile Include="EntityModels\NewsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

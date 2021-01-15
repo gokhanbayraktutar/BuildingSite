@@ -27,6 +27,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<ContactPage, ContactPageModel>();
             config.CreateMap<Reference, ReferenceModel>();
             config.CreateMap<SiteConstant, SiteConstantModel>();
+            config.CreateMap<News, NewsModel>();
 
             #endregion
 
@@ -43,6 +44,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<ContactPageModel, ContactPage>();
             config.CreateMap<ReferenceModel, Reference>();
             config.CreateMap<SiteConstantModel, SiteConstant>();
+            config.CreateMap<NewsModel, News>();
 
             #endregion
         }

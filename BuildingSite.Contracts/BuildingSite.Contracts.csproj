@@ -46,6 +46,7 @@
     <Compile Include="IRepository\IAdminService.cs" />
     <Compile Include="IRepository\ICategoryService.cs" />
     <Compile Include="IRepository\IContactPageService.cs" />
+    <Compile Include="IRepository\INewsService.cs" />
     <Compile Include="IRepository\IOurServiceService.cs" />
     <Compile Include="IRepository\IProjectCategoryService.cs" />
     <Compile Include="IRepository\IProjectService.cs" />

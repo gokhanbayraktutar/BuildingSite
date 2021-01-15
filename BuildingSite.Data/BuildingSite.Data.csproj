@@ -64,6 +64,7 @@
     <Compile Include="Entities\Base\Entity.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\ContactPage.cs" />
+    <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\OurService.cs" />
     <Compile Include="Entities\ProjectCategory.cs" />
     <Compile Include="Entities\Reference.cs" />

@@ -31,5 +31,7 @@ namespace BuildingSite.Data.Context
 
         public DbSet<SubCategory> SubCategories { get; set; }
 
+       public DbSet<News> Newses { get; set; }
+
     }
 }
