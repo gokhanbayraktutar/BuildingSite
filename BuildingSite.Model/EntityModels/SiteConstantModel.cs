@@ -9,11 +9,15 @@ namespace BuildingSite.Model.EntityModels
 
         public string Logo { get; set; }
 
+        public string PictureOurService { get; set; }
+
         public string Content { get; set; }
 
         public string WorkTime { get; set; }
 
         public HttpPostedFileBase ImageFile { get; set; }
+
+        public HttpPostedFileBase ImageFile2 { get; set; }
 
         public string YearsOfExperience { get; set; }
 

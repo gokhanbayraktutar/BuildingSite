@@ -74,7 +74,31 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
                 siteConstantModel.ImageFile.SaveAs(fileName);
 
-                _siteConstantService.Update(siteConstantModel);
+                if(siteConstantModel.ImageFile2 != null)
+                {
+                    string fileName2 = Path.GetFileNameWithoutExtension(siteConstantModel.ImageFile2.FileName);
+
+                    string extension2 = Path.GetExtension(siteConstantModel.ImageFile2.FileName);
+
+                    fileName2 = fileName2 + DateTime.Now.ToString("yymmssfff") + extension2;
+
+                    siteConstantModel.PictureOurService = fileName2;
+
+                    fileName2 = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName2);
+
+                    siteConstantModel.ImageFile2.SaveAs(fileName2);
+
+                    _siteConstantService.Update(siteConstantModel);
+                }
+                else
+                {
+                    var siteConstant = _siteConstantService.GetAll().FirstOrDefault(x => x.Id == siteConstantModel.Id);
+
+                    siteConstantModel.PictureOurService = siteConstant.PictureOurService;
+
+                    _siteConstantService.Update(siteConstantModel);
+                }
+                
             }
 
             else
@@ -83,11 +107,30 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
                 siteConstantModel.Logo = siteConstant.Logo;
 
-                _siteConstantService.Update(siteConstantModel);
+                if (siteConstantModel.ImageFile2 != null)
+                {
+                    string fileName2 = Path.GetFileNameWithoutExtension(siteConstantModel.ImageFile2.FileName);
 
+                    string extension2 = Path.GetExtension(siteConstantModel.ImageFile2.FileName);
+
+                    fileName2 = fileName2 + DateTime.Now.ToString("yymmssfff") + extension2;
+
+                    siteConstantModel.PictureOurService = fileName2;
+
+                    fileName2 = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName2);
+
+                    siteConstantModel.ImageFile2.SaveAs(fileName2);
+
+                    _siteConstantService.Update(siteConstantModel);
+                }
+                else
+                {
+
+                    siteConstantModel.PictureOurService = siteConstant.PictureOurService;
+
+                    _siteConstantService.Update(siteConstantModel);
+                }
             }
-
-
             return RedirectToAction("Edit");
         }
 

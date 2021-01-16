@@ -36,6 +36,21 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Resim-Hizmetlerimiz</label>
+                <div class="col-sm-5">
+                    <input type="file" name="ImageFile2" value="@Model.ImageFile2;" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    @if (Model.PictureOurService != null)
+                    {
+                        <img src="~/Upload/Image/@Model.PictureOurService" width="100" />
+                    }
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">İçerik</label>
                 <div class="col-sm-5">
                     <input type="text" name="Content" value="@Model.Content" class="form-control form-control-normal">
@@ -50,7 +65,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Proje Sayısı</label>
                 <div class="col-sm-5">
-                    <input type="text" name="ProjectCount" value="@Model.ProjectCount" required  class="form-control form-control-normal">
+                    <input type="text" name="ProjectCount" value="@Model.ProjectCount" required class="form-control form-control-normal">
                 </div>
             </div>
             <div class="form-group row">

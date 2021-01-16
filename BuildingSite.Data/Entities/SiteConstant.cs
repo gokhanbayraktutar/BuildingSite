@@ -20,5 +20,7 @@ namespace BuildingSite.Data.Entities
 
         public string ProjectCount { get; set; }
 
+        public string PictureOurService { get; set; }
+
     }
 }
