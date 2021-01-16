@@ -26,7 +26,9 @@ namespace BuildingSite.Web.Controllers
         
         private readonly INewsService _newsService;
 
-        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService, IProjectCategoryService projectCategoryService, IProjectService projectService, IReferencesService referencesService, INewsService newsService)
+        private readonly IContactPageService _contactPageService;
+
+        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService, IProjectCategoryService projectCategoryService, IProjectService projectService, IReferencesService referencesService, INewsService newsService,IContactPageService contactPageService)
         {
             _siteConstantService = siteConstantService;
 
@@ -43,6 +45,8 @@ namespace BuildingSite.Web.Controllers
             _referencesService = referencesService;
 
             _newsService = newsService;
+
+            _contactPageService = contactPageService;
 
         }
 
@@ -83,6 +87,12 @@ namespace BuildingSite.Web.Controllers
             return Content(model.Header);
         }
 
+        public ActionResult Content()
+        {
+            var model = _siteConstantService.GetById(6);
+
+            return Content(model.Content);
+        }
 
         public ActionResult Phone()
         {
@@ -90,6 +100,22 @@ namespace BuildingSite.Web.Controllers
 
             return Content(model.Phone);
         }
+
+        public ActionResult GSM()
+        {
+            var model = _contactPageService.GetById(1);
+
+            return Content(model.Gsm);
+        }
+
+        public ActionResult Adres()
+        {
+            var model = _contactPageService.GetById(1);
+
+            return Content(model.Adres);
+        }
+
+
         public ActionResult Logo()
         {
             var model = _siteConstantService.GetById(6);
@@ -112,7 +138,6 @@ namespace BuildingSite.Web.Controllers
 
             return View();
         }
-
         public ActionResult OurService()
         {
             ViewModel model = new ViewModel();
@@ -121,7 +146,5 @@ namespace BuildingSite.Web.Controllers
 
             return View("_Header",model);
         }
-
-
     }
 }
