@@ -1,0 +1,65 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--====================  breadcrumb area ====================-->
+<div class="page-breadcrumb bg-img space__bottom--r120" data-bg="/Upload/Image/@Model.SiteConstantModel.PictureOurService">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="page-breadcrumb-content text-center">
+                    <h1>@Model.OurServiceModel.Header</h1>
+                    <ul class="page-breadcrumb-links">
+                        <li><a href="/Home/Index">Anasayfa</a></li>
+                        <li><a href="/OurService/Index">Hizmetlerimiz</a></li>
+                        <li>@Model.OurServiceModel.Header</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of breadcrumb area  ====================-->
+<!--====================  service details ====================-->
+<div class="service-section space__bottom--r120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12 order-1 order-lg-2">
+                <div class="service-details">
+                    <div class="service-gallery">
+                        <div class="service-gallery__wrapper">
+                            <div class="service-gallery__single-slide">
+                                <div class="item">
+                                    <img src="/Upload/Image/@Model.OurServiceModel.Picture" style="width:700px; height:400px" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content space__top--30">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="space__bottom--15">@Model.OurServiceModel.Header</h3>
+                                <p>@Model.OurServiceModel.Content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12 order-2 order-lg-1 space__top__md--50 space__top__lm--50">
+                <div class="sidebar">
+                    <h3 class="sidebar-title">Hizmetler</h3>
+                    <ul class="sidebar-list">
+                        @foreach (var ourServiceModel in Model.ourServiceModels)
+                        {
+                            <li><a href="/OurService/Detail/@ourServiceModel.Id">@ourServiceModel.Header</a></li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of service details  ====================-->

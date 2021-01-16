@@ -45,15 +45,19 @@ namespace BuildingSite.Web.Controllers
             return View(model);
         }
 
-        public ActionResult Detail()
+        public ActionResult Detail(int id)
         {
             ViewModel model = new ViewModel();
+
+            model.SiteConstantModel = _siteConstantService.GetById(6);
 
             model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
 
             model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.OurServiceModel = _ourServiceService.GetById(id);
 
             return View(model);
         }
