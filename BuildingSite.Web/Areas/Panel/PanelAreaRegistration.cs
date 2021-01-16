@@ -17,7 +17,8 @@ namespace BuildingSite.Web.Areas.Panel
             context.MapRoute(
                 "Panel_default",
                 "Panel/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "BuildingSite.Web.Areas.Panel.Controllers" }
             );
         }
     }
