@@ -1,0 +1,58 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--====================  breadcrumb area ====================-->
+<div class="page-breadcrumb bg-img space__bottom--r120" data-bg="/Content/assets/img/backgrounds/bc-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="page-breadcrumb-content text-center">
+                    <h1>Hizmetler</h1>
+                    <ul class="page-breadcrumb-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li>Hizmetler</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of breadcrumb area  ====================-->
+<div class="service-section space__bottom--r120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="service-item-wrapper space__bottom--m40">
+                    <div class="row">
+                        @foreach (var ourService in Model.ourServiceModels)
+                        {
+                            <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
+                                <div class="service-grid-item">
+                                    <div class="service-grid-item__image">
+                                        <div class="service-grid-item__image-wrapper">
+                                            <a href="service-details.html">
+                                                <img src="~/Upload/Image/@ourService.Picture" style="width:370px; height:247px" class="img-fluid" alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="service-grid-item__content">
+                                        <h3 class="title">
+                                            <a href="service-details.html">@ourService.Header</a>
+                                        </h3>
+                                        <p class="subtitle">
+                                            @ourService.Description
+                                        </p>       
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
