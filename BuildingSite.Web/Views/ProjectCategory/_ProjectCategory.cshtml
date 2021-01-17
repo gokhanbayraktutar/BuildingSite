@@ -1,0 +1,26 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@using PagedList.Mvc;
+
+<div class="row">
+    @foreach (var project in Model.Projects)
+    {
+        <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
+            <div class="single-project-wrapper single-project-wrapper--reduced-abs">
+                <a class="single-project-item p-0" href="/ProjectCategory/Detail/@project.Id">
+                    <img src="~/Upload/Image/@project.Picture" style="width:370px; height:302px" class="img-fluid" alt="">
+                    <span class="single-project-title">@project.Header</span>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    <center>
+        @Html.PagedListPager(
+Model.Projects,
+page => Url.Action("Pager", new { page = page }),
+PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "project" })
+)
+    </center>
+</div>

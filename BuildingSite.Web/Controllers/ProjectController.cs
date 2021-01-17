@@ -53,14 +53,6 @@ namespace BuildingSite.Web.Controllers
         {
             ViewModel model = new ViewModel();
 
-            model.SiteConstantModel = _siteConstantService.GetById(6);
-
-            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
-
             model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(page, 8);
 
             return PartialView("_Project",model);

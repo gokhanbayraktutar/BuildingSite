@@ -186,6 +186,7 @@
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OurServiceController.cs" />
+    <Compile Include="Controllers\ProjectCategoryController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1404,6 +1405,9 @@
     <Content Include="Views\OurService\Detail.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\_Project.cshtml" />
+    <Content Include="Views\Project\Detail.cshtml" />
+    <Content Include="Views\ProjectCategory\Index.cshtml" />
+    <Content Include="Views\ProjectCategory\_ProjectCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

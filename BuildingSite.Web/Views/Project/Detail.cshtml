@@ -54,7 +54,7 @@
                     <ul class="sidebar-list">
                         @foreach (var projectCategory in Model.ProjectCategoryModels)
                         {
-                            <li><a href="#">@projectCategory.Name</a></li>
+                            <li><a href="/ProjectCategory/Index/@projectCategory.Id">@projectCategory.Name</a></li>
                         }
 
                     </ul>

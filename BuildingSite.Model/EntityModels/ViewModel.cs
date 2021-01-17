@@ -29,5 +29,7 @@ namespace BuildingSite.Model.EntityModels
        public OurServiceModel OurServiceModel { get; set; }
 
        public ProjectModel ProjectModel { get; set; }
+
+       public ProjectCategoryModel ProjectCategoryModel { get; set; }
     }
 }

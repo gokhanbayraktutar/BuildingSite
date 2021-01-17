@@ -59,11 +59,11 @@
                                                         @foreach (var item in Model.ProjectCategoryModels)
                                                         {
                                                             <li class="has-sub-menu">
-                                                                <a href="#">@item.Name</a>
+                                                                <a href="/ProjectCategory/Index/@item.Id">@item.Name</a>
                                                                 <ul class="sub-menu">
                                                                     @foreach (var project in Model.ProjectModels.Where(x=>x.ProjectCategoryId == item.Id).Where(x=>x.Active).ToList())
                                                                     {
-                                                                        <li><a href="#">@project.Header</a></li>
+                                                                        <li><a href="/Project/Detail/@project.Id">@project.Header</a></li>
                                                                     } 
                                                                 </ul>
                                                             </li>
