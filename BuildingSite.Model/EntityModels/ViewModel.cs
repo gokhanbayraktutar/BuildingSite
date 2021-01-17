@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using PagedList;
 namespace BuildingSite.Model.EntityModels
 {
     public class ViewModel
@@ -18,7 +18,9 @@ namespace BuildingSite.Model.EntityModels
 
        public List<ProjectModel> ProjectModels { get; set; }
 
-       public List<ReferenceModel> ReferenceModels { get; set; }
+       public IPagedList<ProjectModel> Projects { get; set; }
+
+        public List<ReferenceModel> ReferenceModels { get; set; }
 
        public AboutUsPageModel AboutUsPageModel { get; set; }
 
