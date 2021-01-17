@@ -24,7 +24,7 @@
                     <ul class="footer-widget__menu">
                         @foreach (var ctg in Model.ProjectCategoryModels)
                         {
-                            <li><a href="#">@ctg.Name</a></li>
+                            <li><a href="/ProjectCategory/Index/@ctg.Id">@ctg.Name</a></li>
                         }
                         @*<li><a href="#">Hakkımızda</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
@@ -37,9 +37,9 @@
                 <div class="footer-widget space__top--15 space__top__md--40 space__top__lm--40">
                     <h5 class="footer-widget__title space__bottom--20">Kurumsal</h5>
                     <ul class="footer-widget__menu">
-                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="/AboutUsPage/Index">Hakkımızda</a></li>
                         <li><a href="/OurService/Index">Hizmetlerimiz</a></li>
-                        <li><a href="#">Projelerimiz</a></li>
+                        <li><a href="/Project/Index">Projelerimiz</a></li>
                         <li><a href="#">Haberler</a></li>
                     </ul>
                 </div>
