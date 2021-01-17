@@ -20,7 +20,7 @@ namespace BuildingSite.Model.EntityModels
 
        public IPagedList<ProjectModel> Projects { get; set; }
 
-        public List<ReferenceModel> ReferenceModels { get; set; }
+       public List<ReferenceModel> ReferenceModels { get; set; }
 
        public AboutUsPageModel AboutUsPageModel { get; set; }
 
@@ -31,5 +31,7 @@ namespace BuildingSite.Model.EntityModels
        public ProjectModel ProjectModel { get; set; }
 
        public ProjectCategoryModel ProjectCategoryModel { get; set; }
+
+       public IPagedList<ReferenceModel> References { get; set; }
     }
 }

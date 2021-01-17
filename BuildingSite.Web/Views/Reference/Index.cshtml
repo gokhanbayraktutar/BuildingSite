@@ -1,0 +1,58 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--====================  breadcrumb area ====================-->
+<div class="page-breadcrumb bg-img space__bottom--r120" data-bg="/Upload/Image/@Model.SiteConstantModel.PictureOurService">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="page-breadcrumb-content text-center">
+                    <h1>Referanslar</h1>
+                    <ul class="page-breadcrumb-links">
+                        <li><a href="/Home/Index">Anasayfa</a></li>
+                        <li>Referanslar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of breadcrumb area  ====================-->
+
+<div class="service-section space__bottom--r120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="service-item-wrapper space__bottom--m40" id="reference">
+                    <div class="row">
+                        @foreach (var reference in Model.References)
+                        {
+                            <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
+                                <div class="service-grid-item">
+                                    <div class="service-grid-item__image">
+                                        <div class="service-grid-item__image-wrapper">
+                                                <img src="~/Upload/Image/@reference.Picture" style="width:200px;" class="img-fluid" alt="" />         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        <center>
+                            @Html.PagedListPager(
+                Model.References,
+                page => Url.Action("Pager", new { page = page }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "reference" })
+                )
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
