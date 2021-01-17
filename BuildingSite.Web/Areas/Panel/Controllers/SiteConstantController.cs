@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class SiteConstantController : Controller
+    public class SiteConstantController : BaseController
     {
 
         private readonly ISiteConstantService _siteConstantService;

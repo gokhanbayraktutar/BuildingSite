@@ -7,7 +7,8 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class AboutUsPageController : Controller
+
+    public class AboutUsPageController : BaseController
     {
         private readonly IAboutUsPageService _aboutUsPageService;
 

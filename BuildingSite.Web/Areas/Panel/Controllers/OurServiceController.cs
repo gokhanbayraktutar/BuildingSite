@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class OurServiceController : Controller
+    public class OurServiceController : BaseController
     {
         private readonly IOurServiceService _ourServiceService;
 

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class SubCategoryController : Controller
+    public class SubCategoryController : BaseController
     {
         private readonly ISubCategoryService _subCategoryService;
         private readonly ICategoryService _categoryService;

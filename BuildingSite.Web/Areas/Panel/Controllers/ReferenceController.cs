@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class ReferenceController : Controller
+    public class ReferenceController : BaseController
     {
         private readonly IReferencesService _referencesService;
 

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class DefaultController : Controller
+    public class DefaultController : BaseController
     {
         // GET: Panel/Default
         public ActionResult Index()

@@ -171,6 +171,7 @@
     <Compile Include="Areas\Panel\Controllers\AccountController.cs" />
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
     <Compile Include="Areas\Panel\Controllers\AnasayfaController.cs" />
+    <Compile Include="Areas\Panel\Controllers\BaseController.cs" />
     <Compile Include="Areas\Panel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
@@ -1407,6 +1408,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Panel\Data\" />
+    <Folder Include="Areas\Panel\Views\Base\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\Image\" />
   </ItemGroup>

@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class ProjectController : Controller
+    public class ProjectController : BaseController
     {
         private readonly IProjectService _projectService;
         private readonly IProjectCategoryService _projectCategoryService;
@@ -52,7 +53,11 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
-            projectModel.ImageFile.SaveAs(fileName);
+            WebImage img = new WebImage(projectModel.ImageFile.InputStream);
+           
+            img.Resize(200, 200);
+         
+            img.Save(fileName);
 
             _projectService.Add(projectModel);
 

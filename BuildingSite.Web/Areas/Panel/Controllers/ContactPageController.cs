@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class ContactPageController : Controller
+    public class ContactPageController : BaseController
     {
         private readonly IContactPageService _contactPageService;
 

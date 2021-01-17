@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
 
         private readonly IAdminService _adminService;

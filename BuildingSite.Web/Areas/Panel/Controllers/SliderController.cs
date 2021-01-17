@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class SliderController : Controller
+    public class SliderController : BaseController
     {
         private readonly ISliderService _sliderService;
 
