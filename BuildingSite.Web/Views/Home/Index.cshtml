@@ -141,9 +141,9 @@
     <div class="project-wrapper space__bottom--m5" id="project-justify-wrapper" >
         @foreach (var project in Model.ProjectModels.Take(8).ToList())
         {
-            <div class="single-project-wrapper" style="width:472px !important;">
+            <div class="single-project-wrapper">
                 <a class="single-project-item" href="project-details.html">
-                    <img src="~/Upload/Image/@project.Picture"  alt="">
+                    <img src="~/Upload/Image/@project.Picture" class="img-fluid"  alt="">
                     <span class="single-project-title">@project.Header</span>
                 </a>
             </div>

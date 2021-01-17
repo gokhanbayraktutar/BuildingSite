@@ -55,7 +55,7 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
             WebImage img = new WebImage(projectModel.ImageFile.InputStream);
            
-            img.Resize(200, 200);
+            img.Resize(484, 354);
          
             img.Save(fileName);
 
@@ -92,7 +92,11 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
 
                 fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
 
-                projectModel.ImageFile.SaveAs(fileName);
+                WebImage img = new WebImage(projectModel.ImageFile.InputStream);
+
+                img.Resize(472, 472);
+
+                img.Save(fileName);
 
                 _projectService.Update(projectModel);
 
