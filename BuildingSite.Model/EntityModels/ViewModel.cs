@@ -26,6 +26,8 @@ namespace BuildingSite.Model.EntityModels
 
        public List<NewsModel> newsModels { get; set; }
 
-        public OurServiceModel OurServiceModel { get; set; }
+       public OurServiceModel OurServiceModel { get; set; }
+
+       public ProjectModel ProjectModel { get; set; }
     }
 }

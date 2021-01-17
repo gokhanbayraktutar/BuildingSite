@@ -44,7 +44,7 @@ namespace BuildingSite.Web.Controllers
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
-            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(1, 3);
+            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(1, 8);
 
             return View(model);
         }
@@ -61,9 +61,28 @@ namespace BuildingSite.Web.Controllers
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
-            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(page, 3);
+            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(page, 8);
 
             return PartialView("_Project",model);
         }
+
+        public ActionResult Detail(int id)
+        {
+            ViewModel model = new ViewModel();
+
+            model.SiteConstantModel = _siteConstantService.GetById(6);
+
+            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
+
+            model.ProjectModel = _projectService.GetById(id);
+
+            return View(model);
+        }
+
+
     }
 }

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col">
                 <div class="page-breadcrumb-content text-center">
-                    <h1>Project</h1>
+                    <h1>Projeler</h1>
                     <ul class="page-breadcrumb-links">
                         <li><a href="/Home/Index">Anasayfa</a></li>
                         <li>Projeler</li>
@@ -30,9 +30,9 @@
                     <div class="row">
                         @foreach (var project in Model.Projects)
                         {
-                            <div class="col-lg-4 col-md-6 col-12 space__bottom--40">
+                            <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
                                 <div class="single-project-wrapper single-project-wrapper--reduced-abs">
-                                    <a class="single-project-item p-0" href="project-details.html">
+                                    <a class="single-project-item p-0" href="/Project/Detail/@project.Id">
                                         <img src="~/Upload/Image/@project.Picture" style="width:370px; height:302px" class="img-fluid" alt="">
                                         <span class="single-project-title">@project.Header</span>
                                     </a>
@@ -52,18 +52,7 @@
 
                 </div>
             </div>
-        </div>
-        @*<div class="row space__top--50">
-                <div class="col">
-                    <ul class="page-pagination">
-                        <li><a href="#"><i class="fa fa-angle-left"></i> Prev</a></li>
-                        <li class="active"><a href="#">01</a></li>
-                        <li><a href="#">02</a></li>
-                        <li><a href="#">03</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i> Next</a></li>
-                    </ul>
-                </div>
-            </div>*@
+        </div> 
     </div>
 </div>
 
