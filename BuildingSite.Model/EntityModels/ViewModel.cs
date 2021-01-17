@@ -33,5 +33,9 @@ namespace BuildingSite.Model.EntityModels
        public ProjectCategoryModel ProjectCategoryModel { get; set; }
 
        public IPagedList<ReferenceModel> References { get; set; }
+
+       public IPagedList<NewsModel> Newses { get; set; }
+
+        public NewsModel NewsModel { get; set; }
     }
 }

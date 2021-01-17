@@ -1,0 +1,34 @@
+﻿@model BuildingSite.Model.EntityModels.ViewModel
+@using PagedList.Mvc;
+<div class="row">
+    @foreach (var news in Model.Newses)
+    {
+        <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
+            <div class="service-grid-item">
+                <div class="service-grid-item__image">
+                    <a href="/News/Detail/@news.Id">
+                        <img src="~/Upload/Image/@news.Picture" style="width:370px; height:247px" class="img-fluid" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="service-grid-item__content">
+                <h3 class="title">
+                    <a href="/News/Detail/@news.Id">@news.Header</a>
+                </h3>
+                <p class="subtitle">
+                    @news.Description
+                </p>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    <center>
+        @Html.PagedListPager(
+Model.Newses,
+page => Url.Action("Pager", new { page = page }),
+PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "news" })
+)
+    </center>
+</div>
