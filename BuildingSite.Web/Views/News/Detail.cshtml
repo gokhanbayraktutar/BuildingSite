@@ -52,12 +52,12 @@
                     @foreach (var news in Model.newsModels.Take(5))
                     {
                         <div class="sidebar-blog">
-                            <a href="blog-details-left-sidebar.html" class="image"><img src="/Upload/Image/@news.Picture" alt=""></a>
+                            <a href="/News/Detail/@news.Id" class="image"><img src="/Upload/Image/@news.Picture" alt=""></a>
                             <div class="content">
                                 <h5>
-                                    <a href="blog-details-left-sidebar.html">@news.Header</a>
+                                    <a href="/News/Detail/@news.Id">@news.Header</a>
                                 </h5>
-                                <span>30 October 2020</span>
+                                <span>@Convert.ToDateTime(news.Date).ToShortDateString()</span>
                             </div>
                         </div>
                     }
