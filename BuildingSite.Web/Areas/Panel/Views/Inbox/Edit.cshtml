@@ -1,0 +1,100 @@
+﻿@model BuildingSite.Model.EntityModels.InboxModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="card" style="margin-top:10px">
+        <div class="card-header">
+            <h5>Gelen Mesaj  Düzenleme</h5>
+            <hr />
+            <div class="card-header-right"><i class="icofont icofont-spinner-alt-5"></i></div>
+        </div>
+
+        <div class="card-block">
+            <form enctype="multipart/form-data" method="post" role="form">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Adı Soyadı</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-6 col-form-label">@Model.Name</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">IP Adresi</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-6 col-form-label">@Model.IP</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Tarih</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-6 col-form-label">@Model.DateTime</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-6 col-form-label">@Model.Mail</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Telefon</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-6 col-form-label">@Model.Phone</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Mesaj</label>
+                    <div class="col-sm-5">
+                        <label class="col-sm-10 col-form-label">@Model.Messsage</label>
+                    </div>
+                </div>
+                @*<div class="form-group row">
+                    <div class="col-sm-2">Okundu Durumu</div>
+                    <div class="col-sm-6">
+                        <div class="form-check">
+                            @if (Model.Read)
+                            {
+                                <input class="form-check-input" type="checkbox" name="Read" value="true" id="gridCheck1" checked>
+                            }
+                            else
+                            {
+                                <input class="form-check-input" type="checkbox" name="Read" value="true" id="gridCheck1">
+                            }
+                            <label class="form-check-label" for="gridCheck1">
+                                Evet
+                            </label>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Okundu Durumu:</label>
+                    <div class="col-sm-2">
+                        <select name="Read" class="form-control">
+                            @if (Model.Read == true)
+                            {
+                                <option value="true">Evet</option>
+                                <option value="false">Hayır</option>
+                            }
+                            else
+                            {
+                                <option value="false">Hayır</option>
+                                <option value="true">Evet</option>
+
+                            }
+
+                        </select>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <div class="col-lg-7" style="float:right">
+                        <button type="submit" class="btn btn-success">Kaydet</button>
+                        <button class="btn btn-danger">İptal et</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+

@@ -63,6 +63,7 @@
     <Compile Include="EntityModels\Base\EntityModel.cs" />
     <Compile Include="EntityModels\CategoryModel.cs" />
     <Compile Include="EntityModels\ContactPageModel.cs" />
+    <Compile Include="EntityModels\InboxModel.cs" />
     <Compile Include="EntityModels\OurServiceModel.cs" />
     <Compile Include="EntityModels\ProjectCategoryModel.cs" />
     <Compile Include="EntityModels\ProjectModel.cs" />

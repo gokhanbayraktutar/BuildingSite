@@ -34,6 +34,7 @@ namespace BuildingSite.Web
             builder.RegisterType<SubCategoryService>().As<ISubCategoryService>();
             builder.RegisterType<OurServiceService>().As<IOurServiceService>();
             builder.RegisterType<NewsService>().As<INewsService>();
+            builder.RegisterType<InboxService>().As<IInboxService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

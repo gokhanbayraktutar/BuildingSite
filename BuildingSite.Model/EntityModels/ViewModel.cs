@@ -36,6 +36,8 @@ namespace BuildingSite.Model.EntityModels
 
        public IPagedList<NewsModel> Newses { get; set; }
 
-        public NewsModel NewsModel { get; set; }
+       public NewsModel NewsModel { get; set; }
+
+       public List<InboxModel> InboxModels { get; set; }
     }
 }

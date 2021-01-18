@@ -28,6 +28,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<Reference, ReferenceModel>();
             config.CreateMap<SiteConstant, SiteConstantModel>();
             config.CreateMap<News, NewsModel>();
+            config.CreateMap<Inbox, InboxModel>();
 
             #endregion
 
@@ -45,6 +46,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<ReferenceModel, Reference>();
             config.CreateMap<SiteConstantModel, SiteConstant>();
             config.CreateMap<NewsModel, News>();
+            config.CreateMap<InboxModel, Inbox>();
 
             #endregion
         }

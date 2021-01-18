@@ -175,6 +175,7 @@
     <Compile Include="Areas\Panel\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ContactPageController.cs" />
     <Compile Include="Areas\Panel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Panel\Controllers\InboxController.cs" />
     <Compile Include="Areas\Panel\Controllers\NewsController.cs" />
     <Compile Include="Areas\Panel\Controllers\OurServiceController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
@@ -1373,6 +1374,8 @@
     <Content Include="Areas\Panel\Views\News\Create.cshtml" />
     <Content Include="Areas\Panel\Views\News\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\News\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Inbox\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Inbox\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
