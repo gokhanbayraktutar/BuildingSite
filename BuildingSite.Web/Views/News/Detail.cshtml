@@ -47,15 +47,6 @@
                 </div>
             </div>
             <div class="col-lg-4 col-12 space__top__md--50 space__top__lm--50 order-2 order-lg-1">
-                @*<div class="sidebar">
-                    <h3 class="sidebar-title">Haberler</h3>
-                    <ul class="sidebar-list">
-                        @foreach (var news in Model.newsModels.Take(5))
-                        {
-                            <li><a href="/News/Detail/@news.Id">@news.Header</a></li>
-                        }
-                    </ul>
-                </div>*@
                 <div class="sidebar">
                     <h3 class="sidebar-title">Son Haberler</h3>
                     @foreach (var news in Model.newsModels.Take(5))
