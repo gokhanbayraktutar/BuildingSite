@@ -47,7 +47,7 @@ namespace BuildingSite.Web.Controllers
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
-            model.Newses = _newsService.GetAll().ToPagedList(1,2);
+            model.Newses = _newsService.GetAll().ToPagedList(1,8);
 
             return View(model);
         }
@@ -56,7 +56,7 @@ namespace BuildingSite.Web.Controllers
         {
             ViewModel model = new ViewModel();
 
-            model.Newses = _newsService.GetAll().ToPagedList(page, 2);
+            model.Newses = _newsService.GetAll().ToPagedList(page, 8);
 
             return PartialView("_News", model);
         }

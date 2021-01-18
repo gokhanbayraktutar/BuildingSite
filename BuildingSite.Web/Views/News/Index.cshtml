@@ -6,7 +6,7 @@
 }
 
 <!--====================  breadcrumb area ====================-->
-<div class="page-breadcrumb bg-img space__bottom--r120" data-bg="/Upload/Image/@Model.SiteConstantModel.PictureOurService">
+<div class="page-breadcrumb bg-img space__bottom--r120" data-bg="/Upload/Image/@Model.SiteConstantModel.PictureOurService" style="height:250px" >
     <div class="container">
         <div class="row">
             <div class="col">
@@ -23,44 +23,47 @@
 </div>
 <!--====================  End of breadcrumb area  ====================-->
 
-<div class="service-section space__bottom--r120">
+<!--====================  blog area ====================-->
+<div class="blog-section space__bottom--r120" >
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="service-item-wrapper space__bottom--m40" id="news">
-                    <div class="row">
-                        @foreach (var news in Model.Newses)
-                        {
-                        <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
-                            <div class="service-grid-item">
-                                <div class="service-grid-item__image">
-                                    <a href="/News/Detail/@news.Id">
-                                        <img src="~/Upload/Image/@news.Picture" style="width:370px; height:247px" class="img-fluid" alt="" />
-                                    </a>
+        <div class="row" style="margin-bottom:5px">
+            <div class="col-lg-12 col-12 order-1 order-lg-2" id="news">
+                <div class="row" style="margin-bottom:5px">
+
+                    @foreach (var news in Model.Newses)
+                    {
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="blog-post-slider__single-slide blog-post-slider__single-slide--grid-view">
+                                <div class="blog-post-slider__image space__bottom--30">
+                                    <a href="/News/Detail/@news.Id"><img src="~/Upload/Image/@news.Picture" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="blog-post-slider__content">
+                                    <p class="post-date"> @Convert.ToDateTime(news.Date).ToShortDateString()</p>
+                                    <h3 class="post-title">
+                                        <a href="/News/Detail/@news.Id">@news.Header</a>
+                                    </h3>
+                                    <p class="post-excerpt">
+                                        @news.Description
+                                    </p>
+                                    <a href="/News/Detail/@news.Id" class="see-more-link">Daha fazla oku</a>
                                 </div>
                             </div>
-                            <div class="service-grid-item__content">
-                                <h3 class="title">
-                                    <a href="/News/Detail/@news.Id">@news.Header</a>
-                                </h3>
-                                <p class="subtitle">
-                                    @news.Description
-                                </p>
-                            </div>
                         </div>
-                        }
-                    </div>
-                    <div>
-                        <center>
-                            @Html.PagedListPager(
-                Model.Newses,
-                page => Url.Action("Pager", new { page = page }),
-                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "news" })
-                )
-                        </center>
-                    </div>
+                    }
+                    
+
+                </div>
+                <div >
+                    <center>
+                        @Html.PagedListPager(
+            Model.Newses,
+            page => Url.Action("Pager", new { page = page }),
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "news" })
+            )
+                    </center>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--====================  End of blog area  ====================-->
