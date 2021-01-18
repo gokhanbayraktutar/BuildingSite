@@ -61,10 +61,10 @@
                                                             <li class="has-sub-menu">
                                                                 <a href="/ProjectCategory/Index/@item.Id">@item.Name</a>
                                                                 <ul class="sub-menu">
-                                                                    @foreach (var project in Model.ProjectModels.Where(x=>x.ProjectCategoryId == item.Id).Where(x=>x.Active).ToList())
+                                                                    @foreach (var project in Model.ProjectModels.Where(x => x.ProjectCategoryId == item.Id).Where(x => x.Active).ToList())
                                                                     {
                                                                         <li><a href="/Project/Detail/@project.Id">@project.Header</a></li>
-                                                                    } 
+                                                                    }
                                                                 </ul>
                                                             </li>
                                                         }
@@ -72,6 +72,7 @@
                                                     </ul>
                                                 </li>
                                                 <li><a href="/Reference/Index">Referanslar</a></li>
+                                                <li><a href="/News/Index">Haberler</a></li>
                                                 <li><a href="about.html">Bize Ulaşın</a></li>
 
                                             </ul>
