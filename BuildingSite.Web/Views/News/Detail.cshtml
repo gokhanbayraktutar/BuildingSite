@@ -22,45 +22,57 @@
     </div>
 </div>
 <!--====================  End of breadcrumb area  ====================-->
-<!--====================  service details ====================-->
-<div class="service-section space__bottom--r120">
+<!--====================  blog details ====================-->
+<div class="blog-section space__bottom--r120">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-12 order-1 order-lg-2">
-                <div class="service-details">
-                    <div class="service-gallery">
-                        <div class="service-gallery__wrapper">
-                            <div class="service-gallery__single-slide">
-                                <div class="item">
-                                    <img src="/Upload/Image/@Model.NewsModel.Picture" style="width:700px; height:400px" class="img-fluid" alt="">
-                                </div>
+                <div class="row">
+                    <div class="blog-details col-12">
+                        <div class="blog-inner">
+                            <div class="media">
+                                <div class="image"><img src="/Upload/Image/@Model.NewsModel.Picture" style="width:750px; height:400px" alt=""></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="content space__top--30">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3 class="space__bottom--15">@Model.NewsModel.Header</h3>
-                                <span >@Model.NewsModel.Date</span>
-                                <p>@Model.NewsModel.Content</p>
+                            <div class="content">
+                                <ul class="meta">
+                                    <li>@Convert.ToDateTime(Model.NewsModel.Date).ToShortDateString()</li>
+                                </ul>
+                                <h2 class="title">@Model.NewsModel.Header</h2>
+                                <div class="desc space__bottom--30">
+                                    <p>@Model.NewsModel.Content</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-12 order-2 order-lg-1 space__top__md--50 space__top__lm--50">
-                <div class="sidebar">
+            <div class="col-lg-4 col-12 space__top__md--50 space__top__lm--50 order-2 order-lg-1">
+                @*<div class="sidebar">
                     <h3 class="sidebar-title">Haberler</h3>
                     <ul class="sidebar-list">
                         @foreach (var news in Model.newsModels.Take(5))
                         {
                             <li><a href="/News/Detail/@news.Id">@news.Header</a></li>
                         }
-
                     </ul>
+                </div>*@
+                <div class="sidebar">
+                    <h3 class="sidebar-title">Son Haberler</h3>
+                    @foreach (var news in Model.newsModels.Take(5))
+                    {
+                        <div class="sidebar-blog">
+                            <a href="blog-details-left-sidebar.html" class="image"><img src="/Upload/Image/@news.Picture" alt=""></a>
+                            <div class="content">
+                                <h5>
+                                    <a href="blog-details-left-sidebar.html">@news.Header</a>
+                                </h5>
+                                <span>30 October 2020</span>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--====================  End of service details  ====================-->
+<!--====================  End of blog details  ====================-->
