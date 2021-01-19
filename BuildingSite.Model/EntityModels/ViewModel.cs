@@ -39,5 +39,7 @@ namespace BuildingSite.Model.EntityModels
        public NewsModel NewsModel { get; set; }
 
        public List<InboxModel> InboxModels { get; set; }
+
+       public ContactPageModel ContactPageModel { get; set; }
     }
 }

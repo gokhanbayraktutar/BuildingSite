@@ -186,6 +186,7 @@
     <Compile Include="Areas\Panel\Controllers\SubCategoryController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\AboutUsPageController.cs" />
+    <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OurServiceController.cs" />
@@ -1420,6 +1421,7 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\_News.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\ContactPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1427,6 +1429,7 @@
     <Folder Include="Areas\Panel\Views\Base\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\Image\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
