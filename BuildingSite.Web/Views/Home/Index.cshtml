@@ -32,7 +32,7 @@
 </div>
 <!--====================  End of hero slider area  ====================-->
 <!--====================  about area ====================-->
-<div class="about-area space__bottom--r120 ">
+<div class="about-area space__bottom--r120 " style="margin-bottom:50px">
     <div class="container">
         <div class="row align-items-center row-25">
             <div class="col-md-6">
@@ -94,7 +94,7 @@
 </div>
 <!--====================  End of service area  ====================-->
 <!--====================  fun fact area ====================-->
-<div class="fun-fact-area space__bottom--r120">
+<div class="fun-fact-area space__bottom--r120" style="margin-bottom:50px">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -127,27 +127,30 @@
 </div>
 <!--====================  End of fun fact area  ====================-->
 <!--====================  project area ====================-->
-<div class="project-area space__bottom--r120">
+<div class="project-section space__bottom--r120" style="margin-bottom:80px">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- section title -->
                 <div class="section-title text-center  space__bottom--40 mx-auto">
                     <h2 class="section-title__title">Projelerimiz</h2>
                 </div>
+                <div class="project-item-wrapper space__bottom--m40">
+                    <div class="row">
+                        @foreach (var project in Model.ProjectModels.Take(8).ToList())
+                        {
+                            <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
+                                <div class="single-project-wrapper single-project-wrapper--reduced-abs">
+                                    <a class="single-project-item p-0" href="/Project/Detail/@project.Id">
+                                        <img src="~/Upload/Image/@project.Picture" style="height:200px" class="img-fluid" alt="">
+                                        <span class="single-project-title">@project.Header</span>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="project-wrapper space__bottom--m5" id="project-justify-wrapper" >
-        @foreach (var project in Model.ProjectModels.Take(8).ToList())
-        {
-            <div class="single-project-wrapper">
-                <a class="single-project-item" href="project-details.html">
-                    <img src="~/Upload/Image/@project.Picture" class="img-fluid"  alt="">
-                    <span class="single-project-title">@project.Header</span>
-                </a>
-            </div>
-        }
     </div>
 </div>
 <!--====================  End of project area  ====================-->
@@ -189,44 +192,3 @@
     </div>
 </div>
 <!--====================  End of blog grid slider area  ====================-->
-<!--====================  brand logo area ====================-->
-<div class="brand-logo-area space__bottom--r120">
-    <div class="container">
-        <div class="section-title text-center  space__bottom--40 mx-auto">
-            <h3 class="section-title__sub">Referanslar</h3>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- brand logo slider -->
-                <div class="brand-logo-wrapper">
-
-
-                    @foreach (var reference in Model.ReferenceModels)
-                    {
-                        <div class="single-brand-logo">
-                            <a href="#"><img src="~/Upload/Image/@reference.Picture" class="img-fluid" alt=""></a>
-                        </div>
-                    }
-
-                    @*<div class="single-brand-logo">
-                            <a href="#"><img src="~/Content/assets/img/brand-logo/logo2.png" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="single-brand-logo">
-                            <a href="#"><img src="~/Content/assets/img/brand-logo/logo3.png" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="single-brand-logo">
-                            <a href="#"><img src="~/Content/assets/img/brand-logo/logo4.png" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="single-brand-logo">
-                            <a href="#"><img src="~/Content/assets/img/brand-logo/logo5.png" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="single-brand-logo">
-                            <a href="#"><img src="~/Content/assets/img/brand-logo/logo4.png" class="img-fluid" alt=""></a>
-                        </div>*@
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--====================  End of brand logo area  ====================-->
