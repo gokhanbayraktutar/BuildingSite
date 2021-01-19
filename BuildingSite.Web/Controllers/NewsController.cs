@@ -13,23 +13,11 @@ namespace BuildingSite.Web.Controllers
     {
         private readonly ISiteConstantService _siteConstantService;
 
-        private readonly IOurServiceService _ourServiceService;
-
-        private readonly IProjectCategoryService _projectCategoryService;
-
-        private readonly IProjectService _projectService;
-
         private readonly INewsService _newsService;
 
-        public NewsController(ISiteConstantService siteConstantService, IOurServiceService ourServiceService, IProjectCategoryService projectCategoryService, IProjectService projectService, INewsService newsService)
+        public NewsController(ISiteConstantService siteConstantService, INewsService newsService)
         {
             _siteConstantService = siteConstantService;
-
-            _ourServiceService = ourServiceService;
-
-            _projectCategoryService = projectCategoryService;
-
-            _projectService = projectService;
 
             _newsService = newsService;
         }
@@ -40,12 +28,6 @@ namespace BuildingSite.Web.Controllers
             ViewModel model = new ViewModel();
 
             model.SiteConstantModel = _siteConstantService.GetById(6);
-
-            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.Newses = _newsService.GetAll().ToPagedList(1,8);
 
@@ -66,12 +48,6 @@ namespace BuildingSite.Web.Controllers
             ViewModel model = new ViewModel();
 
             model.SiteConstantModel = _siteConstantService.GetById(6);
-
-            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.newsModels = _newsService.GetAll().ToList();
 

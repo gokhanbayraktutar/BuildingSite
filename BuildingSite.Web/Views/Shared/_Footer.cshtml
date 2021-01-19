@@ -1,4 +1,24 @@
 ﻿@model BuildingSite.Model.EntityModels.ViewModel
+@{ 
+    BuildingSite.Data.Context.DataContext db = new BuildingSite.Data.Context.DataContext();
+
+    BuildingSite.Services.Repository.ProjectCategoryService projectCategoryService = new BuildingSite.Services.Repository.ProjectCategoryService(db);
+
+    var projectCategoryModels = projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
+
+    BuildingSite.Services.Repository.SiteConstantService siteConstantService = new BuildingSite.Services.Repository.SiteConstantService(db);
+
+    var siteConstantModel = siteConstantService.GetById(6);
+
+    BuildingSite.Services.Repository.AboutUsPageService aboutUsPageService = new BuildingSite.Services.Repository.AboutUsPageService(db);
+
+    var aboutUsPageModel = aboutUsPageService.GetById(1);
+
+    BuildingSite.Services.Repository.ContactPageService contactPageService = new BuildingSite.Services.Repository.ContactPageService(db);
+
+    var contactPageModel = contactPageService.GetById(1);
+
+}
     <!--====================  footer area ====================-->
 <div class="footer-area bg-img space__inner--ry120" data-bg="/Content/assets/img/backgrounds/footer-bg.jpg" style="height:400px">
     <div class="container">
@@ -8,7 +28,7 @@
                     <div class="footer-widget__logo space__bottom--40">
                         <a href="index.html">
                             @*<img src="~/Content/assets/img/logo-white.png" class="img-fluid" alt="">*@
-                            <img src="~/Upload/Image/@{ Html.RenderAction("Logo", "Home"); }" width="200" alt="Theme-Logo" />
+                            <img src="~/Upload/Image/@siteConstantModel.Logo" width="200" alt="Theme-Logo" />
                         </a>
                     </div>
                     <ul class="social-icons">
@@ -22,7 +42,7 @@
                 <div class="footer-widget space__top--15 space__top__md--40 space__top__lm--40">
                     <h5 class="footer-widget__title space__bottom--20">Proje Kategoriler</h5>
                     <ul class="footer-widget__menu">
-                        @foreach (var ctg in Model.ProjectCategoryModels)
+                        @foreach (var ctg in projectCategoryModels)
                         {
                             <li><a href="/ProjectCategory/Index/@ctg.Id">@ctg.Name</a></li>
                         }
@@ -40,7 +60,7 @@
                         <li><a href="/AboutUsPage/Index">Hakkımızda</a></li>
                         <li><a href="/OurService/Index">Hizmetlerimiz</a></li>
                         <li><a href="/Project/Index">Projelerimiz</a></li>
-                        <li><a href="#">Haberler</a></li>
+                        <li><a href="/News/Index">Haberler</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,16 +71,16 @@
                 <div class="footer-contact-wrapper">
                     <div class="single-footer-contact">
                         <div class="single-footer-contact__icon"><i class="fa fa-map-marker"></i></div>
-                        <div class="single-footer-contact__text">@{ Html.RenderAction("Adres", "Home");}</div>
+                        <div class="single-footer-contact__text">@contactPageModel.Adres</div>
                     </div>
                     <div class="single-footer-contact">
                         <div class="single-footer-contact__icon"><i class="fa fa-phone"></i></div>
-                        <div class="single-footer-contact__text"> <a href="tel:@{ Html.RenderAction("GSM", "Home");}">@{ Html.RenderAction("GSM", "Home");}</a> <br> <a href="tel:@{ Html.RenderAction("Phone", "Home");}">@{ Html.RenderAction("Phone", "Home");}</a> </div>
+                        <div class="single-footer-contact__text"> <a href="tel:@contactPageModel.Gsm">@contactPageModel.Gsm</a> <br> <a href="tel:@contactPageModel.Telefon">@contactPageModel.Telefon</a> </div>
                     </div>
                     <div class="single-footer-contact">
                         <div class="single-footer-contact__icon"><i class="fa fa-globe"></i></div>
                         <div class="single-footer-contact__text">
-                            <a href="mailto:@{ Html.RenderAction("Mail", "Home");}">@{ Html.RenderAction("Mail", "Home"); }</a>
+                            <a href="mailto: @contactPageModel.Email1">@contactPageModel.Email1</a>
                             <br> <a href="#"></a>
                         </div>
                     </div>
@@ -74,7 +94,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <p class="copyright-text">2021 &copy; <a href="#">Tüm Hakları Saklıdır</a>- @Model.SiteConstantModel.Header</p>
+                <p class="copyright-text">2021 &copy; <a href="#">Tüm Hakları Saklıdır</a>- @siteConstantModel.Header</p>
             </div>
         </div>
     </div>

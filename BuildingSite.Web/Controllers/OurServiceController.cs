@@ -14,19 +14,12 @@ namespace BuildingSite.Web.Controllers
 
         private readonly IOurServiceService _ourServiceService;
 
-        private readonly IProjectCategoryService _projectCategoryService;
-
-        private readonly IProjectService _projectService;
-
-        public OurServiceController(ISiteConstantService siteConstantService, IOurServiceService ourServiceService, IProjectCategoryService projectCategoryService, IProjectService projectService)
+        public OurServiceController(ISiteConstantService siteConstantService, IOurServiceService ourServiceService)
         {
             _siteConstantService = siteConstantService;
 
             _ourServiceService = ourServiceService;
 
-            _projectCategoryService = projectCategoryService;
-
-            _projectService = projectService;
         }
 
         // GET: OurService
@@ -38,10 +31,6 @@ namespace BuildingSite.Web.Controllers
 
             model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
 
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
-
             return View(model);
         }
 
@@ -52,10 +41,6 @@ namespace BuildingSite.Web.Controllers
             model.SiteConstantModel = _siteConstantService.GetById(6);
 
             model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.OurServiceModel = _ourServiceService.GetById(id);
 

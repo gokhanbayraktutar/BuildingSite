@@ -1,4 +1,28 @@
-﻿@model BuildingSite.Model.EntityModels.ViewModel
+﻿
+@{ 
+    BuildingSite.Data.Context.DataContext db = new BuildingSite.Data.Context.DataContext();
+
+    BuildingSite.Services.Repository.OurServiceService ourServiceService = new BuildingSite.Services.Repository.OurServiceService(db);
+
+    var ourServiceModels = ourServiceService.GetAll().Where(x => x.Active == true).ToList();
+
+    BuildingSite.Services.Repository.ProjectCategoryService projectCategoryService = new BuildingSite.Services.Repository.ProjectCategoryService(db);
+
+    var projectCategoryModels = projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
+
+    BuildingSite.Services.Repository.ProjectService projectService = new BuildingSite.Services.Repository.ProjectService(db);
+
+    var projectModels = projectService.GetAll().Where(x => x.Active == true).ToList();
+
+    BuildingSite.Services.Repository.SiteConstantService siteConstantService = new BuildingSite.Services.Repository.SiteConstantService(db);
+
+    var siteConstantModel = siteConstantService.GetById(6);
+
+    BuildingSite.Services.Repository.AboutUsPageService aboutUsPageService = new BuildingSite.Services.Repository.AboutUsPageService(db);
+
+    var aboutUsPageModel = aboutUsPageService.GetById(1);
+
+}
  
  <!--====================  header area ====================-->
 <div class="header-area header-sticky bg-img space__inner--y40 background-repeat--x background-color--dark d-none d-lg-block" data-bg="/Content/assets/img/icons/ruler.png">
@@ -9,13 +33,13 @@
                 <div class="col-lg-4">
                     <div class="header-top-info">
                         <span class="header-top-info__image pr-1"><img src="~/Content/assets/img/icons/phone.png" alt=""></span>
-                        <span class="header-top-info__text">@{ Html.RenderAction("Phone", "Home"); }</span>
+                        <span class="header-top-info__text">@aboutUsPageModel.Phone</span>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="header-top-info text-center">
                         <span class="header-top-info__image pr-1"><img src="~/Content/assets/img/icons/clock.png" alt=""></span>
-                        <span class="header-top-info__text">@{ Html.RenderAction("WorkTime", "Home"); }</span>
+                        <span class="header-top-info__text">@siteConstantModel.WorkTime</span>
                     </div>
                 </div>
             </div>
@@ -32,8 +56,7 @@
                                 <div class="col-lg-2">
                                     <div class="brand-logo">
                                         <a href="index.html">
-                                            @*<img src="~/Content/assets/img/logo.png" class="img-fluid" alt="">*@
-                                            <img src="~/Upload/Image/@{ Html.RenderAction("Logo", "Home"); }" width="100" alt="Theme-Logo" />
+                                            <img src="~/Upload/Image/@siteConstantModel.Logo" width="100" alt="Theme-Logo" />
                                         </a>
                                     </div>
                                 </div>
@@ -47,7 +70,7 @@
                                                 <li class="has-sub-menu">
                                                     <a href="/OurService/Index">Hizmetlerimiz</a>
                                                     <ul class="sub-menu">
-                                                        @foreach (var item in Model.ourServiceModels)
+                                                        @foreach (var item in ourServiceModels)
                                                         {
                                                             <li><a href="/OurService/Detail/@item.Id">@item.Header</a></li>
                                                         }
@@ -56,12 +79,12 @@
                                                 <li class="has-sub-menu">
                                                     <a href="/Project/Index">Projelerimiz</a>
                                                     <ul class="sub-menu">
-                                                        @foreach (var item in Model.ProjectCategoryModels)
+                                                        @foreach (var item in projectCategoryModels)
                                                         {
                                                             <li class="has-sub-menu">
                                                                 <a href="/ProjectCategory/Index/@item.Id">@item.Name</a>
                                                                 <ul class="sub-menu">
-                                                                    @foreach (var project in Model.ProjectModels.Where(x => x.ProjectCategoryId == item.Id).Where(x => x.Active).ToList())
+                                                                    @foreach (var project in projectModels.Where(x => x.ProjectCategoryId == item.Id).Where(x => x.Active).ToList())
                                                                     {
                                                                         <li><a href="/Project/Detail/@project.Id">@project.Header</a></li>
                                                                     }
@@ -77,16 +100,6 @@
 
                                             </ul>
                                         </nav>
-                                        <!-- search icon nav menu -->
-                                        @*<div class="nav-search-icon">
-                                                <button class="header-search-toggle"><i class="fa fa-search"></i></button>
-                                                <div class="header-search-form">
-                                                    <form action="#">
-                                                        <input type="text" placeholder="Type and hit enter">
-                                                        <button><i class="fa fa-search"></i></button>
-                                                    </form>
-                                                </div>
-                                            </div>*@
                                     </div>
                                 </div>
                             </div>

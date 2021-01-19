@@ -12,25 +12,13 @@ namespace BuildingSite.Web.Controllers
     {
         private readonly ISiteConstantService _siteConstantService;
 
-        private readonly IOurServiceService _ourServiceService;
-
-        private readonly IProjectCategoryService _projectCategoryService;
-
-        private readonly IProjectService _projectService;
-
         private readonly IContactPageService _contactPageService;
 
         private readonly IInboxService _inboxService;
 
-        public ContactPageController(ISiteConstantService siteConstantService, IOurServiceService ourServiceService, IProjectCategoryService projectCategoryService, IProjectService projectService, IContactPageService contactPageService, IInboxService inboxService)
+        public ContactPageController(ISiteConstantService siteConstantService, IContactPageService contactPageService, IInboxService inboxService)
         {
             _siteConstantService = siteConstantService;
-
-            _ourServiceService = ourServiceService;
-
-            _projectCategoryService = projectCategoryService;
-
-            _projectService = projectService;
 
             _contactPageService = contactPageService;
 
@@ -44,12 +32,6 @@ namespace BuildingSite.Web.Controllers
             ViewModel model = new ViewModel();
 
             model.SiteConstantModel = _siteConstantService.GetById(6);
-
-            model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-            model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.ContactPageModel = _contactPageService.GetById(1);
 
@@ -83,12 +65,6 @@ namespace BuildingSite.Web.Controllers
                 ViewModel model = new ViewModel();
 
                 model.SiteConstantModel = _siteConstantService.GetById(6);
-
-                model.ourServiceModels = _ourServiceService.GetAll().Where(x => x.Active == true).ToList();
-
-                model.ProjectCategoryModels = _projectCategoryService.GetAll().Where(x => x.Active == true).ToList();
-
-                model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
                 model.ContactPageModel = _contactPageService.GetById(1);
 
