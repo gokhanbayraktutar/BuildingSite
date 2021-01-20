@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BuildingSite.Web.Areas.Panel.Controllers
 {
-    public class Project_PictureController : Controller
+    public class Project_PictureController : BaseController
     {
         private readonly IProject_PictureService _project_PictureService;
 
