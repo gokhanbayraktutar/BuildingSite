@@ -12,7 +12,7 @@ namespace BuildingSite.Data.Entities
 
         public bool Active { get; set; }
 
-        public int Siralama { get; set; }
+        public int Sorting { get; set; }
 
     }
 }

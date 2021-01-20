@@ -180,6 +180,7 @@
     <Compile Include="Areas\Panel\Controllers\OurServiceController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectCategoryController.cs" />
     <Compile Include="Areas\Panel\Controllers\ProjectController.cs" />
+    <Compile Include="Areas\Panel\Controllers\Project_PictureController.cs" />
     <Compile Include="Areas\Panel\Controllers\ReferenceController.cs" />
     <Compile Include="Areas\Panel\Controllers\SiteConstantController.cs" />
     <Compile Include="Areas\Panel\Controllers\SliderController.cs" />
@@ -1377,6 +1378,9 @@
     <Content Include="Areas\Panel\Views\News\Index.cshtml" />
     <Content Include="Areas\Panel\Views\Inbox\Index.cshtml" />
     <Content Include="Areas\Panel\Views\Inbox\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Project_Picture\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Project_Picture\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Project_Picture\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

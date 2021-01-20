@@ -68,6 +68,7 @@
     <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\OurService.cs" />
     <Compile Include="Entities\ProjectCategory.cs" />
+    <Compile Include="Entities\Project_Picture.cs" />
     <Compile Include="Entities\Reference.cs" />
     <Compile Include="Entities\SiteConstant.cs" />
     <Compile Include="Entities\Slider.cs" />

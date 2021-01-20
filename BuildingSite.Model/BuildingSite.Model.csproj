@@ -67,6 +67,7 @@
     <Compile Include="EntityModels\OurServiceModel.cs" />
     <Compile Include="EntityModels\ProjectCategoryModel.cs" />
     <Compile Include="EntityModels\ProjectModel.cs" />
+    <Compile Include="EntityModels\Project_PictureModel.cs" />
     <Compile Include="EntityModels\ReferenceModel.cs" />
     <Compile Include="EntityModels\SiteConstantModel.cs" />
     <Compile Include="EntityModels\SliderModel.cs" />

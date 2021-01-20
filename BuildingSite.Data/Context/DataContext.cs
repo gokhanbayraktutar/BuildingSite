@@ -36,5 +36,7 @@ namespace BuildingSite.Data.Context
         public DbSet<Inbox> Inboxes { get; set; }
 
 
+        public DbSet<Project_Picture> Project_Pictures { get; set; }
+
     }
 }

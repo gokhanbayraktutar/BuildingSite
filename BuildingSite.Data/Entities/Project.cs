@@ -1,5 +1,6 @@
 ﻿using BuildingSite.Data.Entities;
 using BuildingSite.Data.Entities.Base;
+using System.Collections.Generic;
 
 namespace BuildingSite.Data
 {
@@ -18,6 +19,8 @@ namespace BuildingSite.Data
         public int ProjectCategoryId { get; set; }
 
         public virtual ProjectCategory ProjectCategory { get; set; }
+
+        public virtual ICollection<Project_Picture> Project_Pictures { get; set; }
 
     }
 }

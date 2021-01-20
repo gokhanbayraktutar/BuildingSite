@@ -29,6 +29,8 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<SiteConstant, SiteConstantModel>();
             config.CreateMap<News, NewsModel>();
             config.CreateMap<Inbox, InboxModel>();
+            config.CreateMap<Project_Picture, Project_PictureModel>()
+                .ForMember(dest => dest.ProjectModel, opt => opt.MapFrom(src => src.Project));
 
             #endregion
 
@@ -47,6 +49,7 @@ namespace BuildingSite.Data.Utilities
             config.CreateMap<SiteConstantModel, SiteConstant>();
             config.CreateMap<NewsModel, News>();
             config.CreateMap<InboxModel, Inbox>();
+            config.CreateMap<Project_PictureModel, Project_Picture>();
 
             #endregion
         }

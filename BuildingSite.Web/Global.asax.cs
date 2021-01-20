@@ -35,6 +35,7 @@ namespace BuildingSite.Web
             builder.RegisterType<OurServiceService>().As<IOurServiceService>();
             builder.RegisterType<NewsService>().As<INewsService>();
             builder.RegisterType<InboxService>().As<IInboxService>();
+            builder.RegisterType<Project_PictureService>().As<IProject_PictureService>();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
