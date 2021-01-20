@@ -23,9 +23,9 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         // GET: Panel/Admin
         public ActionResult Index()
         {
-                List<AdminModel> model = _adminService.GetAll().ToList();
+            List<AdminModel> model = _adminService.GetAll().ToList();
 
-                return View(model);
+            return View(model);
         }
 
         [HttpGet]
