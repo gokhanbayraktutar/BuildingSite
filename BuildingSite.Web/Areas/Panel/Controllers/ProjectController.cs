@@ -43,26 +43,9 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         [HttpPost]
         public ActionResult Create(ProjectModel projectModel)
         {
-            string fileName = Path.GetFileNameWithoutExtension(projectModel.ImageFile.FileName);
-
-            string extension = Path.GetExtension(projectModel.ImageFile.FileName);
-
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-
-            projectModel.Picture = fileName;
-
-            fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
-
-            WebImage img = new WebImage(projectModel.ImageFile.InputStream);
-           
-            img.Resize(484, 354);
-         
-            img.Save(fileName);
-
             _projectService.Add(projectModel);
 
             return RedirectToAction("Index");
-
         }
 
         [HttpGet]
@@ -80,36 +63,8 @@ namespace BuildingSite.Web.Areas.Panel.Controllers
         [HttpPost]
         public ActionResult Edit(ProjectModel projectModel)
         {
-            if (projectModel.ImageFile != null)
-            {
-                string fileName = Path.GetFileNameWithoutExtension(projectModel.ImageFile.FileName);
+            _projectService.Update(projectModel);
 
-                string extension = Path.GetExtension(projectModel.ImageFile.FileName);
-
-                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-
-                projectModel.Picture = fileName;
-
-                fileName = Path.Combine(Server.MapPath("~/Upload/Image/"), fileName);
-
-                WebImage img = new WebImage(projectModel.ImageFile.InputStream);
-
-                img.Resize(472, 472);
-
-                img.Save(fileName);
-
-                _projectService.Update(projectModel);
-
-            }
-            else
-            {
-                var projectCategory = _projectService.GetAll().FirstOrDefault(x => x.Id == projectModel.Id);
-
-                projectModel.Picture = projectCategory.Picture;
-
-                _projectService.Update(projectModel);
-
-            }
             return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)

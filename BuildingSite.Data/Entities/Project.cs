@@ -12,8 +12,6 @@ namespace BuildingSite.Data
 
         public string Content { get; set; }
 
-        public string Picture { get; set; }
-
         public bool Active { get; set; }
 
         public int ProjectCategoryId { get; set; }
