@@ -17,13 +17,17 @@ namespace BuildingSite.Web.Controllers
 
         private readonly IProjectService _projectService;
 
-        public ProjectController(ISiteConstantService siteConstantService, IProjectCategoryService projectCategoryService, IProjectService projectService)
+        private readonly IProject_PictureService _project_PictureService;
+
+        public ProjectController(ISiteConstantService siteConstantService, IProjectCategoryService projectCategoryService, IProjectService projectService, IProject_PictureService project_PictureService)
         {
             _siteConstantService = siteConstantService;
 
             _projectCategoryService = projectCategoryService;
 
             _projectService = projectService;
+
+            _project_PictureService = project_PictureService;
         }
 
 
@@ -39,6 +43,8 @@ namespace BuildingSite.Web.Controllers
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(1, 8);
+
+            model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.Sorting=="1").ToList();
 
             return View(model);
         }
@@ -63,6 +69,10 @@ namespace BuildingSite.Web.Controllers
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
             model.ProjectModel = _projectService.GetById(id);
+
+            model.project_PictureModel = _project_PictureService.GetAll().FirstOrDefault(x => x.ProjectId == id);
+
+            model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.ProjectId == id).ToList();
 
             return View(model);
         }

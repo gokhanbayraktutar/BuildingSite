@@ -40,6 +40,10 @@ namespace BuildingSite.Model.EntityModels
 
        public List<InboxModel> InboxModels { get; set; }
 
-       public ContactPageModel ContactPageModel { get; set; }
+        public List<Project_PictureModel> Project_PictureModels { get; set; }
+
+        public Project_PictureModel project_PictureModel { get; set; }
+
+        public ContactPageModel ContactPageModel { get; set; }
     }
 }

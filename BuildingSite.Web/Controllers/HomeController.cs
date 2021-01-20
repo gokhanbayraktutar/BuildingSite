@@ -26,7 +26,9 @@ namespace BuildingSite.Web.Controllers
 
         private readonly IContactPageService _contactPageService;
 
-        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService,  IProjectService projectService, IReferencesService referencesService, INewsService newsService,IContactPageService contactPageService)
+        private readonly IProject_PictureService _project_PictureService;
+
+        public HomeController(ISiteConstantService siteConstantService, IAboutUsPageService aboutUsPageService, IOurServiceService ourServiceService , ISliderService sliderService,  IProjectService projectService, IReferencesService referencesService, INewsService newsService,IContactPageService contactPageService, IProject_PictureService project_PictureService)
         {
             _siteConstantService = siteConstantService;
 
@@ -43,6 +45,8 @@ namespace BuildingSite.Web.Controllers
             _newsService = newsService;
 
             _contactPageService = contactPageService;
+
+            _project_PictureService = project_PictureService;
 
         }
 
@@ -61,6 +65,8 @@ namespace BuildingSite.Web.Controllers
             model.AboutUsPageModel = _aboutUsPageService.GetById(1);
 
             model.newsModels = _newsService.GetAll().OrderBy(x=>x.Date).Take(3).ToList();
+
+            model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.Sorting == "1").ToList();
 
             return View(model);
         }

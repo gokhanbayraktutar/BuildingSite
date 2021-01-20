@@ -17,13 +17,17 @@ namespace BuildingSite.Web.Controllers
 
         private readonly IProjectService _projectService;
 
-        public ProjectCategoryController(ISiteConstantService siteConstantService, IProjectCategoryService projectCategoryService, IProjectService projectService)
+        private readonly IProject_PictureService _project_PictureService;
+
+        public ProjectCategoryController(ISiteConstantService siteConstantService, IProjectCategoryService projectCategoryService, IProjectService projectService,IProject_PictureService project_PictureService)
         {
             _siteConstantService = siteConstantService;
 
             _projectCategoryService = projectCategoryService;
 
             _projectService = projectService;
+
+            _project_PictureService = project_PictureService;
         }
 
         // GET: ProjectCategory
@@ -40,6 +44,8 @@ namespace BuildingSite.Web.Controllers
             model.Projects = _projectService.GetAll().Where(x => x.ProjectCategoryId == id).Where(x=>x.Active== true).ToPagedList(1, 8);
 
             model.ProjectCategoryModel = _projectCategoryService.GetById(id);
+
+            model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.Sorting == "1").ToList();
 
             TempData["id"] = id;
 

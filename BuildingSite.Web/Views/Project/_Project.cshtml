@@ -5,8 +5,11 @@
     {
         <div class="col-lg-3 col-md-6 col-12 space__bottom--40">
             <div class="single-project-wrapper single-project-wrapper--reduced-abs">
-                <a class="single-project-item p-0" href="project-details.html">
-                    <img src="~/Upload/Image/@project.Picture" style="width:370px; height:302px" class="img-fluid" alt="">
+                <a class="single-project-item p-0" href="/Project/Detail/@project.Id">
+                    @{ var projectpicture = Model.Project_PictureModels.FirstOrDefault(x => x.ProjectId == project.Id);}
+                    <img src="~/Upload/Image/@projectpicture.Picture" style="width:370px; height:302px" class="img-fluid" alt="">
+
+
                     <span class="single-project-title">@project.Header</span>
                 </a>
             </div>
