@@ -42,7 +42,7 @@ namespace BuildingSite.Web.Controllers
 
             model.ProjectModels = _projectService.GetAll().Where(x => x.Active == true).ToList();
 
-            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(1, 8);
+            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(1, 4);
 
             model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.Sorting=="1").ToList();
 
@@ -53,7 +53,7 @@ namespace BuildingSite.Web.Controllers
         {
             ViewModel model = new ViewModel();
 
-            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(page, 8);
+            model.Projects = _projectService.GetAll().Where(x => x.Active == true).ToPagedList(page, 4);
 
             return PartialView("_Project",model);
         }

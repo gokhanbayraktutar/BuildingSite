@@ -27,7 +27,7 @@ namespace BuildingSite.Web.Controllers
 
             model.SiteConstantModel = _siteConstantService.GetById(6);
 
-            model.References = _referencesService.GetAll().ToPagedList(1, 20);
+            model.References = _referencesService.GetAll().ToPagedList(1, 2);
 
             return View(model);
         }
@@ -36,7 +36,7 @@ namespace BuildingSite.Web.Controllers
         {
             ViewModel model = new ViewModel();
 
-            model.References = _referencesService.GetAll().ToPagedList(page, 20);
+            model.References = _referencesService.GetAll().ToPagedList(page, 2);
 
             return PartialView("_Reference", model);
         }
