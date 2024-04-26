@@ -80,6 +80,11 @@ namespace BuildingSite.Web.Controllers
 
             model.project_PictureModel = _project_PictureService.GetAll().FirstOrDefault(x => x.ProjectId == id);
 
+            if(model.project_PictureModel == null)
+            {
+                model.project_PictureModel = new Project_PictureModel();
+            }
+
             model.Project_PictureModels = _project_PictureService.GetAll().Where(x => x.ProjectId == id).ToList();
 
             return View(model);
